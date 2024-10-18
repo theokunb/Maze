@@ -47,6 +47,7 @@ public class GameMenu : MonoBehaviour
 
     public void OnExit()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(0);
     }
 

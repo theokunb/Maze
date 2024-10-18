@@ -154,7 +154,18 @@ public class Game : MonoBehaviour
         FinishAchived?.Invoke();
 
         int level = PlayerPrefs.GetInt(Constants.Level, 1);
-        PlayerPrefs.SetInt(Constants.Level, level + 1);
+        int maxLevel = PlayerPrefs.GetInt(Constants.MaxLevel, 1);
+
+        if(level < Constants.LevelCount)
+        {
+            level += 1;
+            PlayerPrefs.SetInt(Constants.Level, level);
+        }
+        
+        if(level > maxLevel)
+        {
+            PlayerPrefs.SetInt(Constants.MaxLevel, level);
+        }
     }
 
     private void OnHole()
