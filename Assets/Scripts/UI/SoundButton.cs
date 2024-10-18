@@ -9,6 +9,13 @@ public class SoundButton : MonoBehaviour
     [SerializeField] private AudioSource _audiSource;
 
     private bool _status = true;
+    private float _maxVolume;
+
+    private void Awake()
+    {
+        var volume = PlayerPrefs.GetFloat(Constants.Volume, Constants.MaxVolume);
+        _maxVolume = volume;
+    }
 
     private void Start()
     {
@@ -30,6 +37,6 @@ public class SoundButton : MonoBehaviour
 
     private void SetVolume()
     {
-        _audiSource.volume = _status ? 1 : 0;
+        _audiSource.volume = _status ? _maxVolume : 0;
     }
 }

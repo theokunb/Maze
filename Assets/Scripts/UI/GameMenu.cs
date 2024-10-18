@@ -10,7 +10,7 @@ public class GameMenu : MonoBehaviour
     [SerializeField] private CanvasGroup _canvasGroup;
     [SerializeField] private GameObject _menu;
     [SerializeField] private GameObject _finishMenu;
-    [SerializeField] private TMP_Text _levelText;
+    [SerializeField] private LevelLabel _levelLabel;
 
     private void OnEnable()
     {
@@ -83,6 +83,6 @@ public class GameMenu : MonoBehaviour
     {
         int level = PlayerPrefs.GetInt(Constants.Level, 1);
 
-        _levelText.text = $"level: {level}";
+        _levelLabel.SetLevel(level);
     }
 }
