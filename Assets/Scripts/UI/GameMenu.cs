@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,14 +10,17 @@ public class GameMenu : MonoBehaviour
     [SerializeField] private CanvasGroup _canvasGroup;
     [SerializeField] private GameObject _menu;
     [SerializeField] private GameObject _finishMenu;
+    [SerializeField] private TMP_Text _levelText;
 
     private void OnEnable()
     {
+        _game.LevelSelected += OnLevelSelected;
         _game.FinishAchived += OnFinish;
     }
 
     private void OnDisable()
     {
+        _game.LevelSelected -= OnLevelSelected;
         _game.FinishAchived -= OnFinish;
     }
 
@@ -56,7 +60,7 @@ public class GameMenu : MonoBehaviour
     {
         Time.timeScale = 1;
         _toy.enabled = true;
-        await FadeTask(0.8f, 0, 0.01f);
+        await FadeTask(0.4f, 0, 0.01f);
         _canvasGroup.gameObject.SetActive(false);
         menu.SetActive(false);
     }
@@ -66,12 +70,19 @@ public class GameMenu : MonoBehaviour
         Time.timeScale = 0;
         _toy.enabled = false;
         _canvasGroup.gameObject.SetActive(true);
-        await FadeTask(0, 0.8f, 0.01f);
+        await FadeTask(0, 0.4f, 0.01f);
         menu.SetActive(true);
     }
 
     private void OnFinish()
     {
         OpenMenu(_finishMenu);
+    }
+
+    private void OnLevelSelected()
+    {
+        int level = PlayerPrefs.GetInt(Constants.Level, 1);
+
+        _levelText.text = $"level: {level}";
     }
 }

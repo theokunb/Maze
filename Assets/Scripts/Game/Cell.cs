@@ -22,6 +22,7 @@ public class Cell : ICloneable
     public bool RightBound { get; set; }
     public bool BottomBound { get; set; }
     public Plurality Plurality { get; private set; }
+    public CellInside CellInside { get; set; }
 
     public void InitPlurality()
     {

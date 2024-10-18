@@ -1,0 +1,822 @@
+[
+  [
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": true,
+      "Plurality": { "Id": 1 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": true,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 1 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": true,
+      "RightBound": false,
+      "BottomBound": true,
+      "Plurality": { "Id": 3 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": true,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 3 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 5 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 6 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": true,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 7 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": true,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 7 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": true,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 9 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 10 },
+      "CellInside": 0
+    }
+  ],
+  [
+    {
+      "LeftBound": true,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 11 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": true,
+      "Plurality": { "Id": 11 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 11 },
+      "CellInside": 3
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": true,
+      "Plurality": { "Id": 11 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": true,
+      "Plurality": { "Id": 5 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": true,
+      "Plurality": { "Id": 6 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": true,
+      "Plurality": { "Id": 6 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": true,
+      "Plurality": { "Id": 7 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 9 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": true,
+      "BottomBound": false,
+      "Plurality": { "Id": 9 },
+      "CellInside": 0
+    }
+  ],
+  [
+    {
+      "LeftBound": true,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 11 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 13 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": true,
+      "Plurality": { "Id": 11 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": true,
+      "Plurality": { "Id": 14 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 14 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 16 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 17 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": true,
+      "Plurality": { "Id": 18 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 18 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": true,
+      "Plurality": { "Id": 18 },
+      "CellInside": 0
+    }
+  ],
+  [
+    {
+      "LeftBound": true,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": true,
+      "Plurality": { "Id": 11 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 13 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": true,
+      "Plurality": { "Id": 13 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 20 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": true,
+      "Plurality": { "Id": 14 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 14 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": true,
+      "Plurality": { "Id": 14 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 14 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 14 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": true,
+      "Plurality": { "Id": 14 },
+      "CellInside": 0
+    }
+  ],
+  [
+    {
+      "LeftBound": true,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 23 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": true,
+      "Plurality": { "Id": 13 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": true,
+      "Plurality": { "Id": 13 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": true,
+      "Plurality": { "Id": 20 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": true,
+      "Plurality": { "Id": 25 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 25 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 26 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": true,
+      "BottomBound": true,
+      "Plurality": { "Id": 14 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": true,
+      "Plurality": { "Id": 14 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 27 },
+      "CellInside": 0
+    }
+  ],
+  [
+    {
+      "LeftBound": true,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": true,
+      "Plurality": { "Id": 23 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": true,
+      "Plurality": { "Id": 23 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 23 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": true,
+      "Plurality": { "Id": 23 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": true,
+      "Plurality": { "Id": 23 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 25 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 25 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": true,
+      "Plurality": { "Id": 32 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 32 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 32 },
+      "CellInside": 0
+    }
+  ],
+  [
+    {
+      "LeftBound": true,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": true,
+      "Plurality": { "Id": 34 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 34 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": true,
+      "Plurality": { "Id": 23 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 36 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 37 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 25 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 25 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": true,
+      "Plurality": { "Id": 38 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 38 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 32 },
+      "CellInside": 0
+    }
+  ],
+  [
+    {
+      "LeftBound": true,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 39 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 34 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 40 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 40 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 37 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": true,
+      "BottomBound": true,
+      "Plurality": { "Id": 25 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 25 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 41 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": true,
+      "Plurality": { "Id": 38 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": true,
+      "BottomBound": false,
+      "Plurality": { "Id": 32 },
+      "CellInside": 0
+    }
+  ],
+  [
+    {
+      "LeftBound": true,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": true,
+      "Plurality": { "Id": 39 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": true,
+      "Plurality": { "Id": 34 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 34 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 34 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 37 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 42 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 25 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": true,
+      "Plurality": { "Id": 41 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 43 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": true,
+      "BottomBound": true,
+      "Plurality": { "Id": 32 },
+      "CellInside": 3
+    }
+  ],
+  [
+    {
+      "LeftBound": true,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": true,
+      "Plurality": { "Id": 44 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": true,
+      "Plurality": { "Id": 44 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": true,
+      "Plurality": { "Id": 44 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": true,
+      "Plurality": { "Id": 44 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": true,
+      "Plurality": { "Id": 44 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 44 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 44 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": false,
+      "Plurality": { "Id": 44 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": false,
+      "BottomBound": true,
+      "Plurality": { "Id": 44 },
+      "CellInside": 0
+    },
+    {
+      "LeftBound": false,
+      "UpperBound": false,
+      "RightBound": true,
+      "BottomBound": true,
+      "Plurality": { "Id": 44 },
+      "CellInside": 0
+    }
+  ]
+]

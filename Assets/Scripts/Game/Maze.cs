@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,39 +15,51 @@ public class Maze : MonoBehaviour
     private int _size;
     private Cell[,] _array;
     private List<CellView> _cellViews;
+    private CellView _start;
+    private CellView _finish;
+    private List<CellView> _holes = new List<CellView>();
 
     public event Action Created;
+
+    public CellView StartCell => _start;
+    public CellView FinishCell => _finish;
+    public IEnumerable<CellView> Holes => _holes;
+    public int Size => _size;
+
 
     //creating array
     private void Awake()
     {
-        _size = _base.Size;
-        _array = new Cell[_size, _size];
-        _cellViews = new List<CellView>();
+        //_size = _base.Size;
+        //_array = new Cell[_size, _size];
 
-        CreateFirstLine(0);
-        InitPlurality(0);
-        CreateRightBounds(0);
-        CreateBottomBounds(0);
+        //CreateFirstLine(0);
+        //InitPlurality(0);
+        //CreateRightBounds(0);
+        //CreateBottomBounds(0);
 
-        for (int i = 1; i < _size; i++)
-        {
-            CreateNewLine(i);
-            InitPlurality(i);
-            CreateRightBounds(i);
-            CreateBottomBounds(i);
+        //for (int i = 1; i < _size; i++)
+        //{
+        //    CreateNewLine(i);
+        //    InitPlurality(i);
+        //    CreateRightBounds(i);
+        //    CreateBottomBounds(i);
 
-            if (i == _size - 1)
-            {
-                PerformLastLine(i);
-            }
-        }
+        //    if (i == _size - 1)
+        //    {
+        //        PerformLastLine(i);
+        //    }
+        //}
     }
 
-    //create maze
-    private void Start()
+    public void CreateWith(Cell[,] data)
     {
-        Vector2 position = new Vector2(-0.5f, 0.5f);
+        var position = new Vector2(-0.5f, 0.5f);
+        _cellViews = new List<CellView>();
+
+        _array = data;
+        _size = _array.GetLength(0);
+        _base.SetSize(_size);
 
         for (int i = 1; i <= _size; i++)
         {
@@ -58,20 +71,6 @@ public class Maze : MonoBehaviour
 
         Created?.Invoke();
         CreateGlass();
-    }
-
-    public CellView GetRandomCellView()
-    {
-        if(_cellViews == null ||  _cellViews.Count == 0)
-        {
-            return null;
-        }
-        else
-        {
-            int random = UnityEngine.Random.Range(0, _cellViews.Count);
-
-            return _cellViews[random];
-        }
     }
 
     private void CreateGlass()
@@ -87,143 +86,158 @@ public class Maze : MonoBehaviour
         cellView.Setup(_array[i,j]);
 
         _cellViews.Add(cellView);
-    }
 
-    private void TryRandom(Action onSuccess = null, Action onFault = null)
-    {
-        int random = UnityEngine.Random.Range(0, 2);
-
-        if(random == 0)
+        switch (cellView.CellInside)
         {
-            onFault?.Invoke();
-        }
-        else
-        {
-            onSuccess?.Invoke();
-        }
-    }
-
-    //step 1
-    private void CreateFirstLine(int lineId)
-    {
-        for (int i = 0; i < _size; i++)
-        {
-            _array[lineId, i] = new Cell();
-
-            TryRandom(() =>
-            {
-                _array[lineId, i].UpperBound = true;
-            },
-            () =>
-            {
-                _array[lineId, i].UpperBound = false;
-            });
-        }
-
-        CreateExtremeBounds(lineId);
-    }
-
-    private void CreateExtremeBounds(int lineId)
-    {
-        TryRandom(() =>
-        {
-            _array[lineId, 0].LeftBound = true;
-        });
-
-        TryRandom(() =>
-        {
-            _array[lineId, _size - 1].RightBound = true;
-        });
-    }
-
-    //step 2
-    private void InitPlurality(int lineId)
-    {
-        for (int i = 0; i < _size; i++)
-        {
-            _array[lineId, i].InitPlurality();
+            case CellInside.Start:
+                _start = cellView;
+                break;
+            case CellInside.Finish: 
+                _finish = cellView;
+                break;
+            case CellInside.Hole:
+                _holes.Add(cellView);
+                break;
+            default:
+                break;
         }
     }
 
-    //step3
-    private void CreateRightBounds(int lineId)
-    {
-        for (int i = 0; i < _size - 1; i++)
-        {
-            TryRandom(() =>
-            {
-                if (_array[lineId, i].Plurality.Id == _array[lineId, i + 1].Plurality.Id)
-                {
-                    _array[lineId, i].RightBound = true;
-                }
-            }, () =>
-            {
-                _array[lineId, i].MergeWith(_array[lineId, i + 1]);
-            });
-        }
-    }
+    //private void TryRandom(Action onSuccess = null, Action onFault = null)
+    //{
+    //    int random = UnityEngine.Random.Range(0, 2);
 
-    //step4
-    private void CreateBottomBounds(int lineId)
-    {
-        for (int i = 0; i < _size; i++)
-        {
-            TryRandom(() =>
-            {
-                if (_array[lineId, i].IsUniqueInPlurality() || _array[lineId, i].IsUniqueWithoutBottomBound())
-                {
+    //    if(random == 0)
+    //    {
+    //        onFault?.Invoke();
+    //    }
+    //    else
+    //    {
+    //        onSuccess?.Invoke();
+    //    }
+    //}
 
-                }
-                else
-                {
-                    _array[lineId, i].BottomBound = true;
-                }
-            });
-        }
-    }
+    ////step 1
+    //private void CreateFirstLine(int lineId)
+    //{
+    //    for (int i = 0; i < _size; i++)
+    //    {
+    //        _array[lineId, i] = new Cell();
 
-    //step5.1
-    private void CreateNewLine(int lineId)
-    {
-        if (lineId == 0 || lineId >= _size)
-        {
-            return;
-        }
+    //        TryRandom(() =>
+    //        {
+    //            _array[lineId, i].UpperBound = true;
+    //        },
+    //        () =>
+    //        {
+    //            _array[lineId, i].UpperBound = false;
+    //        });
+    //    }
 
-        for (int i = 0; i < _size; i++)
-        {
-            _array[lineId, i] = _array[lineId - 1, i].Clone() as Cell;
-            _array[lineId, i].RightBound = false;
-            _array[lineId, i].UpperBound = false;
+    //    CreateExtremeBounds(lineId);
+    //}
 
-            if (_array[lineId, i].BottomBound == true)
-            {
-                _array[lineId, i].LeavePlurality();
-                _array[lineId, i].BottomBound = false;
-            }
-        }
+    //private void CreateExtremeBounds(int lineId)
+    //{
+    //    TryRandom(() =>
+    //    {
+    //        _array[lineId, 0].LeftBound = true;
+    //    });
 
-        CreateExtremeBounds(lineId);
-    }
+    //    TryRandom(() =>
+    //    {
+    //        _array[lineId, _size - 1].RightBound = true;
+    //    });
+    //}
 
-    //step5.2
-    private void PerformLastLine(int lineId)
-    {
-        for (int i = 0; i < _size; i++)
-        {
-            TryRandom(() =>
-            {
-                _array[lineId, i].BottomBound = true;
-            });
-        }
+    ////step 2
+    //private void InitPlurality(int lineId)
+    //{
+    //    for (int i = 0; i < _size; i++)
+    //    {
+    //        _array[lineId, i].InitPlurality();
+    //    }
+    //}
 
-        for (int i = 0; i < _size - 1; i++)
-        {
-            if (_array[lineId, i].Plurality.Id != _array[lineId, i + 1].Plurality.Id)
-            {
-                _array[lineId, i].RightBound = false;
-                _array[lineId, i].MergeWith(_array[lineId, i + 1]);
-            }
-        }
-    }
+    ////step3
+    //private void CreateRightBounds(int lineId)
+    //{
+    //    for (int i = 0; i < _size - 1; i++)
+    //    {
+    //        TryRandom(() =>
+    //        {
+    //            if (_array[lineId, i].Plurality.Id == _array[lineId, i + 1].Plurality.Id)
+    //            {
+    //                _array[lineId, i].RightBound = true;
+    //            }
+    //        }, () =>
+    //        {
+    //            _array[lineId, i].MergeWith(_array[lineId, i + 1]);
+    //        });
+    //    }
+    //}
+
+    ////step4
+    //private void CreateBottomBounds(int lineId)
+    //{
+    //    for (int i = 0; i < _size; i++)
+    //    {
+    //        TryRandom(() =>
+    //        {
+    //            if (_array[lineId, i].IsUniqueInPlurality() || _array[lineId, i].IsUniqueWithoutBottomBound())
+    //            {
+
+    //            }
+    //            else
+    //            {
+    //                _array[lineId, i].BottomBound = true;
+    //            }
+    //        });
+    //    }
+    //}
+
+    ////step5.1
+    //private void CreateNewLine(int lineId)
+    //{
+    //    if (lineId == 0 || lineId >= _size)
+    //    {
+    //        return;
+    //    }
+
+    //    for (int i = 0; i < _size; i++)
+    //    {
+    //        _array[lineId, i] = _array[lineId - 1, i].Clone() as Cell;
+    //        _array[lineId, i].RightBound = false;
+    //        _array[lineId, i].UpperBound = false;
+
+    //        if (_array[lineId, i].BottomBound == true)
+    //        {
+    //            _array[lineId, i].LeavePlurality();
+    //            _array[lineId, i].BottomBound = false;
+    //        }
+    //    }
+
+    //    CreateExtremeBounds(lineId);
+    //}
+
+    ////step5.2
+    //private void PerformLastLine(int lineId)
+    //{
+    //    for (int i = 0; i < _size; i++)
+    //    {
+    //        TryRandom(() =>
+    //        {
+    //            _array[lineId, i].BottomBound = true;
+    //        });
+    //    }
+
+    //    for (int i = 0; i < _size - 1; i++)
+    //    {
+    //        if (_array[lineId, i].Plurality.Id != _array[lineId, i + 1].Plurality.Id)
+    //        {
+    //            _array[lineId, i].RightBound = false;
+    //            _array[lineId, i].MergeWith(_array[lineId, i + 1]);
+    //        }
+    //    }
+    //}
 }

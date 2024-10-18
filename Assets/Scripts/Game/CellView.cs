@@ -15,6 +15,7 @@ public class CellView : MonoBehaviour
         _leftWall.SetActive(cell.LeftBound);
         _rightWall.SetActive(cell.RightBound);
         _bottomWall.SetActive(cell.BottomBound);
+        CellInside = cell.CellInside;
     }
 }
 

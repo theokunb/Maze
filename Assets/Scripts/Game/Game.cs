@@ -19,6 +19,7 @@ public class Game : MonoBehaviour
     private List<CellInsideView> _cellViews = new List<CellInsideView>();
 
     public event Action FinishAchived;
+    public event Action LevelSelected;
 
     private void OnEnable()
     {
@@ -45,23 +46,50 @@ public class Game : MonoBehaviour
         }
     }
 
-    private void SetRandomCellInside(out CellView cellView, Maze maze, CellInside cellInside)
+    private void Start()
     {
-        do
-        {
-            cellView = maze.GetRandomCellView();
-        } while (cellView.CellInside != CellInside.None);
+        int level;
+        LevelInfo levelInfo = null;
 
-        cellView.CellInside = cellInside;
+        while(levelInfo == null)
+        {
+            level = PlayerPrefs.GetInt(Constants.Level, 1);
+            if(level < 1)
+            {
+                level = 1;
+            }
+
+            levelInfo = Resources.Load($"{Constants.Level} {level}") as LevelInfo;
+
+            if(levelInfo == null)
+            {
+                PlayerPrefs.SetInt(Constants.Level, level - 1);
+            }
+            else
+            {
+                PlayerPrefs.SetInt(Constants.Level, level);
+            }
+        }
+
+        _main.CreateWith(levelInfo.MainArray);
+
+        int i = 0;
+        foreach (var item in levelInfo.OtherArray())
+        {
+            _others[i].CreateWith(item);
+
+            i++;
+        }
+
+        LevelSelected?.Invoke();
     }
 
     private void OnMainCreated()
     {
-        SetRandomCellInside(out CellView startCell, _main, CellInside.Start);
+        var startCell = _main.StartCell;
         CellInsideView cellInsideView = Instantiate(_template, startCell.transform);
         cellInsideView.Setup(startCell, _materialForStart);
 
-        MarkAsHole(_main);
         CreatePlayer(startCell);
     }
 
@@ -75,27 +103,35 @@ public class Game : MonoBehaviour
         }
     }
 
+    private IEnumerable<Maze> AllMaze()
+    {
+        yield return _main;
+
+        foreach(var maze in _others)
+        {
+            yield return maze;
+        }
+    }
+
     private void OnAllOtherCreated()
     {
-        int random = UnityEngine.Random.Range(0, _others.Length);
-
-        SetRandomCellInside(out CellView finishCell, _others[random], CellInside.Finish);
-        CellInsideView cellInsideView = Instantiate( _template, finishCell.transform);
-        cellInsideView.Setup(finishCell, _materialForFinish);
-        cellInsideView.FinishAchived += OnFinish;
-
-        foreach (var other in _others)
+        foreach(var item in AllMaze())
         {
-            MarkAsHole(other);
+            if(item.FinishCell != null)
+            {
+                CellInsideView cellInsideView = Instantiate(_template, item.FinishCell.transform);
+                cellInsideView.Setup(item.FinishCell, _materialForFinish);
+                cellInsideView.FinishAchived += OnFinish;
+            }
+
+            MarkAsHole(item);
         }
     }
 
     private void MarkAsHole(Maze maze)
     {
-        for (int i = 0; i < _holesCountInOneMaze; i++)
+        foreach(var holeCell in maze.Holes)
         {
-            SetRandomCellInside(out CellView holeCell, maze, CellInside.Hole);
-
             CellInsideView cellInsideView = Instantiate(_template, holeCell.transform);
             cellInsideView.Setup(holeCell, _materialForHole);
             cellInsideView.HoleAchived += OnHole;
@@ -106,7 +142,8 @@ public class Game : MonoBehaviour
     private void CreatePlayer(CellView cellView)
     {
         var player = Instantiate(_playerTemplate, _toy.transform);
-        player.Setup(cellView.transform);
+
+        player.Setup(cellView.transform, _main.Size);
         player.ReturnToStart();
         _player = player;
     }
@@ -115,6 +152,9 @@ public class Game : MonoBehaviour
     {
         cellInsideView.FinishAchived -= OnFinish;
         FinishAchived?.Invoke();
+
+        int level = PlayerPrefs.GetInt(Constants.Level, 1);
+        PlayerPrefs.SetInt(Constants.Level, level + 1);
     }
 
     private void OnHole()
