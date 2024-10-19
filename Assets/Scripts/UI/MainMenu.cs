@@ -35,5 +35,6 @@ public class MainMenu : MonoBehaviour
 
         PlayerPrefs.SetFloat(Constants.Volume, newVolume);
         SoundContainer.Instance.UpdateVolume();
+        FocusSoundController.Instance?.SetVolume(newVolume);
     }
 }

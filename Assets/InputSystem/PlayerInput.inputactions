@@ -7,16 +7,16 @@
             "actions": [
                 {
                     "name": "Press",
-                    "type": "Button",
+                    "type": "PassThrough",
                     "id": "c55cbac7-02a5-4d35-b1e5-c74eec03e304",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "Press",
                     "initialStateCheck": false
                 },
                 {
                     "name": "Rotation",
-                    "type": "Value",
+                    "type": "PassThrough",
                     "id": "0c8325ec-df92-41c2-a900-6293631cd80b",
                     "expectedControlType": "Vector2",
                     "processors": "",
@@ -38,8 +38,30 @@
                 },
                 {
                     "name": "",
+                    "id": "f286b978-d1f3-466e-b025-3f0747b0c71e",
+                    "path": "<Touchscreen>/primaryTouch",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Press",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "8cbef93e-d648-4159-a13d-c353296760e8",
                     "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6a09dda3-cd44-4699-b482-082880a0658f",
+                    "path": "<Touchscreen>/delta",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

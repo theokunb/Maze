@@ -28,7 +28,7 @@ public class SoundContainer : MonoBehaviour
         UpdateVolume();
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         if (!_audioSource.isPlaying)
         {
@@ -41,6 +41,13 @@ public class SoundContainer : MonoBehaviour
     public void UpdateVolume()
     {
         var volume = PlayerPrefs.GetFloat(Constants.Volume, Constants.MaxVolume);
+
+        _audioSource.volume = volume;
+    }
+
+    public void UpdateFromApplicationFocusVolume()
+    {
+        var volume = PlayerPrefs.GetFloat(Constants.ApplicationFocusVolume, Constants.MaxVolume);
 
         _audioSource.volume = volume;
     }

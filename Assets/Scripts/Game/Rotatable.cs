@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Threading.Tasks;
 using UnityEngine;
 
@@ -32,13 +33,13 @@ public class Rotatable : MonoBehaviour
         _canRotate = false;
     }
 
-    private async void OnPressPerformed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    private void OnPressPerformed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
         _canRotate = true;
-        await RotateAsync();
+        StartCoroutine(RotateAsync());
     }
 
-    private async Task RotateAsync()
+    private IEnumerator RotateAsync()
     {
         while (_canRotate)
         {
@@ -46,7 +47,7 @@ public class Rotatable : MonoBehaviour
             transform.Rotate(Vector3.down, _rotation.x, Space.World);
             transform.Rotate(Vector3.right, _rotation.y, Space.World);
 
-            await Task.Yield();
+            yield return null;
         }
     }
 
