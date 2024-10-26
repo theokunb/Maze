@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 public class Game : MonoBehaviour
 {
@@ -48,28 +49,20 @@ public class Game : MonoBehaviour
 
     private void Start()
     {
-        int level;
-        LevelInfo levelInfo = null;
+        int level = PlayerPrefs.GetInt(Constants.Level, 1);
+        level = Math.Clamp(level, 1, 50);
 
-        while(levelInfo == null)
-        {
-            level = PlayerPrefs.GetInt(Constants.Level, 1);
-            if(level < 1)
-            {
-                level = 1;
-            }
+        LoadLevelInfo($"Level {level}");
+    }
 
-            levelInfo = Resources.Load($"{Constants.Level} {level}") as LevelInfo;
+    private void LoadLevelInfo(string key)
+    {
+        Addressables.LoadAssetAsync<LevelInfo>(key).Completed += OnLevelInfoLoaded;
+    }
 
-            if(levelInfo == null)
-            {
-                PlayerPrefs.SetInt(Constants.Level, level - 1);
-            }
-            else
-            {
-                PlayerPrefs.SetInt(Constants.Level, level);
-            }
-        }
+    private void OnLevelInfoLoaded(UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationHandle<LevelInfo> obj)
+    {
+        var levelInfo = obj.Result;
 
         _main.CreateWith(levelInfo.MainArray);
 
@@ -82,8 +75,9 @@ public class Game : MonoBehaviour
         }
 
         LevelSelected?.Invoke();
-    }
 
+        Addressables.Release(obj);
+    }
     private void OnMainCreated()
     {
         var startCell = _main.StartCell;
