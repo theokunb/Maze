@@ -1,5 +1,6 @@
 public class Constants
 {
+    public static string Zoom = nameof(Zoom);
     public static string Level = nameof(Level);
     public static string MaxLevel = nameof(MaxLevel);
     public static string Volume = nameof(Volume);
