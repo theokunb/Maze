@@ -48,13 +48,13 @@ public class GameMenu : MonoBehaviour
     public void OnExit()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(Constants.SceneIndex.MenuScene);
     }
 
     public void OnNewGame()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(Constants.SceneIndex.GameScene);
     }
 
     private async void CloseMenu(GameObject menu)

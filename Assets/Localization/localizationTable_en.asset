@@ -52,6 +52,38 @@ MonoBehaviour:
     m_Localized: Win!
     m_Metadata:
       m_Items: []
+  - m_Id: 150646556161830912
+    m_Localized: Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 150827509123477504
+    m_Localized: Theme
+    m_Metadata:
+      m_Items: []
+  - m_Id: 151003513494269952
+    m_Localized: Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 152602208530690048
+    m_Localized: Cloudy Bright Day
+    m_Metadata:
+      m_Items: []
+  - m_Id: 152602339816599552
+    m_Localized: Cotton Candy Morning
+    m_Metadata:
+      m_Items: []
+  - m_Id: 152602492694786048
+    m_Localized: Deep Midnight
+    m_Metadata:
+      m_Items: []
+  - m_Id: 152602562655776768
+    m_Localized: Tropical Noon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 152602649867939840
+    m_Localized: Warm Sunrise Glow
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:
