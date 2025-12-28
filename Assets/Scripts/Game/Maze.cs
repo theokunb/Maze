@@ -8,7 +8,6 @@ using UnityEngine;
 /// </summary>
 public class Maze : MonoBehaviour
 {
-    [SerializeField] private Base _base;
     [SerializeField] private CellView _cellTemplate;
     [SerializeField] private Glass _glassTemplate;
 
@@ -59,7 +58,6 @@ public class Maze : MonoBehaviour
 
         _array = data;
         _size = _array.GetLength(0);
-        _base.SetSize(_size);
 
         for (int i = 1; i <= _size; i++)
         {

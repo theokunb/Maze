@@ -7,6 +7,7 @@ public class SoundButton : MonoBehaviour
     [SerializeField] private Sprite _on;
     [SerializeField] private Sprite _off;
 
+    private SoundContainer _soundContainer;
     private bool _status = true;
     private float _currentVolume;
 
@@ -18,6 +19,7 @@ public class SoundButton : MonoBehaviour
 
     private void Start()
     {
+        _soundContainer = ServiceLocator.Instance.GetService<SoundContainer>();
         SetImage();
         SetVolume();
     }
@@ -37,6 +39,10 @@ public class SoundButton : MonoBehaviour
     private void SetVolume()
     {
         PlayerPrefs.SetFloat(Constants.Volume, _status ? _currentVolume : 0);
-        SoundContainer.Instance?.UpdateVolume();
+        
+        if (_soundContainer != null)
+        {
+            _soundContainer.UpdateVolume();
+        }
     }
 }

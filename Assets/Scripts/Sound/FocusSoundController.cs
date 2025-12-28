@@ -1,22 +1,8 @@
 using UnityEngine;
 
-public class FocusSoundController : MonoBehaviour
+public class FocusSoundController : MonoBehaviour, IService
 {
-    public static FocusSoundController Instance;
-
     private float _currentVolume;
-
-    private void Awake()
-    {
-        if(Instance != null)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
-    }
 
     private void Start()
     {
@@ -36,7 +22,12 @@ public class FocusSoundController : MonoBehaviour
     private void Silence(bool silence)
     {
         PlayerPrefs.SetFloat(Constants.ApplicationFocusVolume, silence ? 0 : _currentVolume);
-        SoundContainer.Instance?.UpdateFromApplicationFocusVolume();
+        var soundContainer = ServiceLocator.Instance.GetService<SoundContainer>();
+        
+        if(soundContainer != null)
+        {
+            soundContainer.UpdateFromApplicationFocusVolume();
+        }
     }
 
     public void SetVolume(float volume)

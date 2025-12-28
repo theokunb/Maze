@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameMenu : MonoBehaviour
+public class GameMenu : MonoBehaviour, IService
 {
     [SerializeField] private Rotatable _toy;
     [SerializeField] private Game _game;
@@ -11,18 +11,6 @@ public class GameMenu : MonoBehaviour
     [SerializeField] private GameObject _menu;
     [SerializeField] private GameObject _finishMenu;
     [SerializeField] private LevelLabel _levelLabel;
-
-    private void OnEnable()
-    {
-        _game.LevelSelected += OnLevelSelected;
-        _game.FinishAchived += OnFinish;
-    }
-
-    private void OnDisable()
-    {
-        _game.LevelSelected -= OnLevelSelected;
-        _game.FinishAchived -= OnFinish;
-    }
 
     private async Task FadeTask(float from, float to, float delta)
     {
@@ -75,12 +63,12 @@ public class GameMenu : MonoBehaviour
         menu.SetActive(true);
     }
 
-    private void OnFinish()
+    public void OnFinish()
     {
         OpenMenu(_finishMenu);
     }
 
-    private void OnLevelSelected()
+    public void SetLevelLabel()
     {
         int level = PlayerPrefs.GetInt(Constants.Level, 1);
 
