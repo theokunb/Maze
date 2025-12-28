@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6dcdd0f243decc4da6a60006b1948ec, type: 3}
   m_Name: TropicalNoon
   m_EditorClassIdentifier: Assembly-CSharp::ThemeColorSet
-  _id: 1
+  _id: 3
   _localizationKey: TropicalNoon
   _colors:
   - {r: 0, g: 1, b: 0, a: 1}

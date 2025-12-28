@@ -7,7 +7,6 @@ public class Game : MonoBehaviour
 {
     [SerializeField] private Player _playerTemplate;
     [SerializeField] private GameObject _toy;
-    [SerializeField] private int _holesCountInOneMaze;
     [SerializeField] private Maze _main;
     [SerializeField] private Maze[] _others;
     [SerializeField] private CellInsideView _template;
@@ -15,7 +14,6 @@ public class Game : MonoBehaviour
     [SerializeField] private Material _materialForFinish;
     [SerializeField] private Material _materialForHole;
 
-    private Player _player;
     private int _createdOtherCount = 0;
     private List<CellInsideView> _cellViews = new List<CellInsideView>();
 
@@ -39,11 +37,6 @@ public class Game : MonoBehaviour
         foreach (var other in _others)
         {
             other.Created -= OnOtherCreated;
-        }
-
-        foreach(var cellInsideView in _cellViews)
-        {
-            cellInsideView.HoleAchived -= OnHole;
         }
     }
 
@@ -115,7 +108,6 @@ public class Game : MonoBehaviour
             {
                 CellInsideView cellInsideView = Instantiate(_template, item.FinishCell.transform);
                 cellInsideView.Setup(item.FinishCell, _materialForFinish);
-                cellInsideView.FinishAchived += OnFinish;
             }
 
             MarkAsHole(item);
@@ -128,7 +120,6 @@ public class Game : MonoBehaviour
         {
             CellInsideView cellInsideView = Instantiate(_template, holeCell.transform);
             cellInsideView.Setup(holeCell, _materialForHole);
-            cellInsideView.HoleAchived += OnHole;
             _cellViews.Add(cellInsideView);
         }
     }
@@ -139,32 +130,5 @@ public class Game : MonoBehaviour
 
         player.Setup(cellView.transform, _main.Size);
         player.ReturnToStart();
-        _player = player;
-    }
-
-    private void OnFinish(CellInsideView cellInsideView)
-    {
-        cellInsideView.FinishAchived -= OnFinish;
-        FinishAchived?.Invoke();
-
-        int level = PlayerPrefs.GetInt(Constants.Level, 1);
-        int maxLevel = PlayerPrefs.GetInt(Constants.MaxLevel, 1);
-
-        if(level < Constants.LevelCount)
-        {
-            level += 1;
-            PlayerPrefs.SetInt(Constants.Level, level);
-        }
-        
-        if(level > maxLevel)
-        {
-            PlayerPrefs.SetInt(Constants.MaxLevel, level);
-        }
-    }
-
-    private void OnHole()
-    {
-        _toy.transform.localEulerAngles = Vector3.zero;
-        _player.ReturnToStart();
     }
 }

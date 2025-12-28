@@ -4,7 +4,7 @@ using System.Linq;
 public class Plurality
 {
     private static int PluralityId = 0;
-    private List<Cell> _cells;
+    private readonly List<Cell> _cells;
 
     public Plurality() 
     {

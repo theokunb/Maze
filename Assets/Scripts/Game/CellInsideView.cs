@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class CellInsideView : MonoBehaviour
@@ -6,9 +5,6 @@ public class CellInsideView : MonoBehaviour
     [SerializeField] private MeshRenderer _meshRenderer;
 
     private CellInside _cellInside;
-
-    public event Action<CellInsideView> FinishAchived;
-    public event Action HoleAchived;
 
     public void Setup(CellView cellView, Material material)
     {
@@ -18,15 +14,27 @@ public class CellInsideView : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.TryGetComponent(out Player player))
+        if (other.TryGetComponent(out Player player))
         {
-            if(_cellInside == CellInside.Finish)
+            if (_cellInside == CellInside.Finish)
             {
-                FinishAchived?.Invoke(this);
+                var gameService = ServiceLocator.Instance.GetService<GameService>();
+                if (gameService == null)
+                {
+                    return;
+                }
+
+                gameService.OnFinish();
             }
-            else if(_cellInside == CellInside.Hole)
+            else if (_cellInside == CellInside.Hole)
             {
-                HoleAchived?.Invoke();
+                var toyService = ServiceLocator.Instance.GetService<ToysService>();
+                if (toyService != null)
+                {
+                    toyService.ResetToyRotation();
+                }
+
+                player.ReturnToStart();
             }
         }
     }

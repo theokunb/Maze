@@ -1,14 +1,14 @@
 using UnityEngine;
 
-public class CameraFollow : MonoBehaviour
+public class CameraFollow : MonoBehaviour, IService
 {
-    [SerializeField] private Base _base;
     [SerializeField] private float _minZoom = 0.9f;
     [SerializeField] private float _maxZoom = 2.1f;
 
     private Vector3 _startPosition;
     private float _zoom;
     private PlayerInput _playerInput;
+    private Base _base;
 
     private void Awake()
     {
@@ -19,21 +19,24 @@ public class CameraFollow : MonoBehaviour
 
     private void OnEnable()
     {
-        _base.SizeChanged += OnBaseSizeChanged;
         _playerInput.Enable();
         _playerInput.PlayerMap.MouseWheel.performed += OnMouseWheel;
     }
 
     private void OnDisable()
     {
-        _base.SizeChanged -= OnBaseSizeChanged;
         _playerInput.Disable();
         _playerInput.PlayerMap.MouseWheel.performed -= OnMouseWheel;
     }
 
-    private void OnBaseSizeChanged()
+    public void OnBaseSizeChanged()
     {
-        transform.position = _startPosition - transform.forward * _base.Size * _zoom;
+        if (_base == null)
+        {
+            return;
+        }
+
+        transform.position = _startPosition - _base.Size * _zoom * transform.forward;
     }
 
     private void OnMouseWheel(UnityEngine.InputSystem.InputAction.CallbackContext obj)
@@ -46,4 +49,6 @@ public class CameraFollow : MonoBehaviour
         OnBaseSizeChanged();
         PlayerPrefs.SetFloat(Constants.Zoom, _zoom);
     }
+
+    public void SetBase(Base mazeBase) => _base = mazeBase;
 }

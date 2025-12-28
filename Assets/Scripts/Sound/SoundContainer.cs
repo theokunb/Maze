@@ -1,25 +1,13 @@
 using UnityEngine;
 
-public class SoundContainer : MonoBehaviour
+public class SoundContainer : MonoBehaviour, IService
 {
     [SerializeField] private AudioClip[] _clips;
-
-    public static SoundContainer Instance;
 
     private AudioSource _audioSource;
 
     private void Awake()
     {
-        if (Instance != null)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
-
-
         _audioSource = GetComponent<AudioSource>();
     }
 

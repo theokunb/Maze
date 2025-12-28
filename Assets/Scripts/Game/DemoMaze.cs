@@ -1,9 +1,9 @@
 using UnityEngine;
-using static UnityEditor.Progress;
 
 public class DemoMaze : MonoBehaviour
 {
     [SerializeField] private Maze _maze;
+    [SerializeField] private Base _base;
     [SerializeField] private LevelInfo _demoLevel;
     [SerializeField] private Player _playerTemplate;
     [SerializeField] private CellInsideView _template;
@@ -13,6 +13,7 @@ public class DemoMaze : MonoBehaviour
 
     private void Awake()
     {
+        _base.SetSize(_demoLevel.MainArray.GetLength(0));
         _maze.CreateWith(_demoLevel.MainArray);
 
         var startCell = _maze.StartCell;

@@ -73,6 +73,12 @@ public class ThemeElement : MonoBehaviour
             return;
         }
 
-        ThemeChanged?.Invoke(_colorSet);
+        var themeService = ServiceLocator.Instance.GetService<ThemeService>();
+        if(themeService == null)
+        {
+            return;
+        }
+
+        themeService.ApplySet(_colorSet.Id);
     }
 }
