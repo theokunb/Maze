@@ -1,30 +1,31 @@
 using System.Linq;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
 
 public class GameService : MonoBehaviour, IService
 {
     private ToysService _toysService;
+    private IStorage _storage;
 
     private void Start()
     {
         _toysService = ServiceLocator.Instance.GetService<ToysService>();
+        _storage = ServiceLocator.Instance.GetService<IStorage>();
 
-        int level = PlayerPrefs.GetInt(Constants.Level, 1);
-        level = Mathf.Clamp(level, 1, 50);
+        var data = _storage.GetData();
+        int level = data.currentLevel;
+        level = Mathf.Clamp(level, 1, Constants.LevelCount);
 
-        LoadLevelInfo($"Level {level}");
+        var levelInfo = Resources.Load<LevelInfo>($"Level {level}");
+        if(levelInfo == null)
+        {
+            return;
+        }
+
+        OnLevelInfoLoaded(levelInfo);
     }
 
-    private void LoadLevelInfo(string key)
+    private void OnLevelInfoLoaded(LevelInfo levelInfo)
     {
-        Addressables.LoadAssetAsync<LevelInfo>(key).Completed += OnLevelInfoLoaded;
-    }
-
-    private void OnLevelInfoLoaded(UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationHandle<LevelInfo> obj)
-    {
-        var levelInfo = obj.Result;
-
         var sideCount = levelInfo.OtherArray().Count() + 1;
         var toyPrefab = _toysService.GetToyPrefab(sideCount);
 
@@ -37,25 +38,26 @@ public class GameService : MonoBehaviour, IService
         {
             gameMenu.SetLevelLabel();
         }
-
-        Addressables.Release(obj);
     }
 
     public void OnFinish()
     {
-        int level = PlayerPrefs.GetInt(Constants.Level, 1);
-        int maxLevel = PlayerPrefs.GetInt(Constants.MaxLevel, 1);
+        var data = _storage.GetData();
+
+        int level = data.currentLevel;
+        int maxLevel = data.maxLevel;
 
         if (level < Constants.LevelCount)
         {
             level += 1;
-            PlayerPrefs.SetInt(Constants.Level, level);
+            data.currentLevel = level;
         }
 
         if (level > maxLevel)
         {
-            PlayerPrefs.SetInt(Constants.MaxLevel, level);
+            data.maxLevel = level;
         }
+        _storage.Save();
 
         var gameMenu = ServiceLocator.Instance.GetService<GameMenu>();
         if (gameMenu != null)

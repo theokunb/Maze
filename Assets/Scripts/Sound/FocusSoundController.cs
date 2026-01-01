@@ -6,7 +6,9 @@ public class FocusSoundController : MonoBehaviour, IService
 
     private void Start()
     {
-        _currentVolume = PlayerPrefs.GetFloat(Constants.Volume, Constants.MaxVolume);
+        var storage = ServiceLocator.Instance.GetService<IStorage>();
+        var data = storage.GetData();
+        _currentVolume = data.currentVolume;
     }
 
     private void OnApplicationFocus(bool hasFocus)
@@ -21,12 +23,20 @@ public class FocusSoundController : MonoBehaviour, IService
 
     private void Silence(bool silence)
     {
-        PlayerPrefs.SetFloat(Constants.ApplicationFocusVolume, silence ? 0 : _currentVolume);
+        float applicationFocusVolume;
+        if (silence)
+        {
+            applicationFocusVolume = 0f;
+        }
+        else
+        {
+            applicationFocusVolume = _currentVolume;
+        }
+
         var soundContainer = ServiceLocator.Instance.GetService<SoundContainer>();
-        
         if(soundContainer != null)
         {
-            soundContainer.UpdateFromApplicationFocusVolume();
+            soundContainer.UpdateFromApplicationFocusVolume(applicationFocusVolume);
         }
     }
 

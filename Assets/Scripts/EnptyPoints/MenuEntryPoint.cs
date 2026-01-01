@@ -17,6 +17,14 @@ public class MenuEntryPoint : EntryPoint
 
         RegisterDontDestroy(_soundContainer);
         RegisterDontDestroy(_focusSoundController);
+
+        var storage = ServiceLocator.Instance.GetService<IStorage>();
+        if(storage == null)
+        {
+            storage = new Yg2Storage();
+            ServiceLocator.Instance.Register(storage);
+        }
+        storage.Load();
     }
 
     private void OnDestroy()

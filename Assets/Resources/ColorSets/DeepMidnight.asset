@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: DeepMidnight
   m_EditorClassIdentifier: Assembly-CSharp::ThemeColorSet
   _id: 2
-  _localizationKey: DeepMidnight
   _colors:
   - {r: 0, g: 0.5019608, b: 0.5019608, a: 1}
   - {r: 0.5568628, g: 0.5568628, b: 0.5568628, a: 1}
@@ -22,3 +21,6 @@ MonoBehaviour:
   - {r: 1, g: 0, b: 0, a: 1}
   - {r: 0.16037738, g: 0.16037738, b: 0.16037738, a: 1}
   _skyboxMaterial: {fileID: 2100000, guid: 1376009c77f1a7748bfcad35351c2e49, type: 2}
+  _ruTitle: "\u0413\u043B\u0443\u0431\u043E\u043A\u0430\u044F \u043F\u043E\u043B\u043D\u043E\u0447\u044C"
+  _enTitle: Deep midnight
+  _trTitle: "Derin gece yar\u0131s\u0131"

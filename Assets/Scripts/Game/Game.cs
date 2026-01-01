@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
 
 public class Game : MonoBehaviour
 {
@@ -16,9 +15,6 @@ public class Game : MonoBehaviour
 
     private int _createdOtherCount = 0;
     private List<CellInsideView> _cellViews = new List<CellInsideView>();
-
-    public event Action FinishAchived;
-    public event Action LevelSelected;
 
     private void OnEnable()
     {
@@ -40,37 +36,30 @@ public class Game : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        int level = PlayerPrefs.GetInt(Constants.Level, 1);
-        level = Math.Clamp(level, 1, 50);
-
-        LoadLevelInfo($"Level {level}");
-    }
 
     private void LoadLevelInfo(string key)
     {
-        Addressables.LoadAssetAsync<LevelInfo>(key).Completed += OnLevelInfoLoaded;
+        //Addressables.LoadAssetAsync<LevelInfo>(key).Completed += OnLevelInfoLoaded;
     }
 
-    private void OnLevelInfoLoaded(UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationHandle<LevelInfo> obj)
-    {
-        var levelInfo = obj.Result;
+    //private void OnLevelInfoLoaded(UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationHandle<LevelInfo> obj)
+    //{
+    //    var levelInfo = obj.Result;
 
-        _main.CreateWith(levelInfo.MainArray);
+    //    _main.CreateWith(levelInfo.MainArray);
 
-        int i = 0;
-        foreach (var item in levelInfo.OtherArray())
-        {
-            _others[i].CreateWith(item);
+    //    int i = 0;
+    //    foreach (var item in levelInfo.OtherArray())
+    //    {
+    //        _others[i].CreateWith(item);
 
-            i++;
-        }
+    //        i++;
+    //    }
 
-        LevelSelected?.Invoke();
+    //    LevelSelected?.Invoke();
 
-        Addressables.Release(obj);
-    }
+    //    Addressables.Release(obj);
+    //}
     private void OnMainCreated()
     {
         var startCell = _main.StartCell;

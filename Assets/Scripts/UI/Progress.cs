@@ -8,6 +8,7 @@ public class Progress : MonoBehaviour
     [SerializeField] private Button _increaseButton;
     [SerializeField] private Button _decreaseButton;
 
+    private IStorage _storage;
     private int _maxLevel;
     private int _currentLevel;
 
@@ -25,9 +26,11 @@ public class Progress : MonoBehaviour
 
     private void Start()
     {
-        _maxLevel = PlayerPrefs.GetInt(Constants.MaxLevel, 1);
+        _storage = ServiceLocator.Instance.GetService<IStorage>();
+        var data = _storage.GetData();
+        _maxLevel = data.maxLevel;
 
-        SetCurrentLevel(_maxLevel);
+        SetCurrentLevel(data.currentLevel);
     }
 
     private void OnIncrease()
@@ -55,6 +58,8 @@ public class Progress : MonoBehaviour
         _currentLevel = value;
         _levelText.text = value.ToString();
 
-        PlayerPrefs.SetInt(Constants.Level, _currentLevel);
+        var data = _storage.GetData();
+        data.currentLevel = _currentLevel;
+        _storage.Save();
     }
 }

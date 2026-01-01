@@ -5,6 +5,7 @@ public class SoundContainer : MonoBehaviour, IService
     [SerializeField] private AudioClip[] _clips;
 
     private AudioSource _audioSource;
+    private IStorage _storage;
 
     private void Awake()
     {
@@ -13,6 +14,7 @@ public class SoundContainer : MonoBehaviour, IService
 
     private void Start()
     {
+        _storage = ServiceLocator.Instance.GetService<IStorage>();
         UpdateVolume();
     }
 
@@ -28,16 +30,15 @@ public class SoundContainer : MonoBehaviour, IService
 
     public void UpdateVolume()
     {
-        var volume = PlayerPrefs.GetFloat(Constants.Volume, Constants.MaxVolume);
+        var data = _storage.GetData();
+        var volume = data.currentVolume;
 
         _audioSource.volume = volume;
     }
 
-    public void UpdateFromApplicationFocusVolume()
+    public void UpdateFromApplicationFocusVolume(float applicationFocusVolume)
     {
-        var volume = PlayerPrefs.GetFloat(Constants.ApplicationFocusVolume, Constants.MaxVolume);
-
-        _audioSource.volume = volume;
+        _audioSource.volume = applicationFocusVolume;
     }
 
     private AudioClip GetRandomClip()

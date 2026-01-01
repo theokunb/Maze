@@ -1,20 +1,20 @@
 using UnityEngine;
-using UnityEngine.Localization.Components;
+using YG.LanguageLegacy;
 
 public class LevelLabel : MonoBehaviour
 {
-    private LocalizeStringEvent _localizeStringEvent;
+    private LangYGAdditionalText _additinalText;
 
     public int CurrentLevel;
 
     private void Awake()
     {
-        _localizeStringEvent = GetComponent<LocalizeStringEvent>();
+        _additinalText = GetComponent<LangYGAdditionalText>();
     }
 
     public void SetLevel(int level)
     {
         CurrentLevel = level;
-        _localizeStringEvent.RefreshString();
+        _additinalText.additionalText = $" {CurrentLevel}";
     }
 }

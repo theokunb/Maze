@@ -15,17 +15,18 @@ public class ThemeService : MonoBehaviour, IService
     [SerializeField] private Material _finishMaterial;
     [SerializeField] private Material _holeMaterial;
 
+    private IStorage _storage;
+
     public IEnumerable<ThemeColorSet> ColorSets { get => _colorSets; }
     public int SetId { get; private set; }
 
-    private void Awake()
-    {
-        var setId = PlayerPrefs.GetInt(Constants.ColorSet, 0);
-        SetId = setId;
-    }
-
     private void Start()
     {
+        _storage = ServiceLocator.Instance.GetService<IStorage>();
+        var data = _storage.GetData();
+        var setId = data.colorSet;
+        SetId = setId;
+
         ApplySet(SetId);
     }
 
@@ -57,6 +58,12 @@ public class ThemeService : MonoBehaviour, IService
         _holeMaterial.color = colors[5];
         RenderSettings.skybox = themeColorSet.SkyboxMaterial;
         DynamicGI.UpdateEnvironment();
-        PlayerPrefs.SetInt(Constants.ColorSet, setId);
+
+        var data = _storage.GetData();
+        if(setId != data.colorSet)
+        {
+            data.colorSet = setId;
+            _storage.Save();
+        }
     }
 }

@@ -7,6 +7,7 @@ public class VolumeService : MonoBehaviour, IService
 
     private SoundContainer _soundContainer;
     private FocusSoundController _focusSoundController;
+    private IStorage _storage;
 
     private void OnEnable()
     {
@@ -20,8 +21,9 @@ public class VolumeService : MonoBehaviour, IService
 
     private void Start()
     {
-        var savedVolume = PlayerPrefs.GetFloat(Constants.Volume, Constants.MaxVolume);
-        _slider.value = savedVolume / Constants.MaxVolume;
+        _storage = ServiceLocator.Instance.GetService<IStorage>();
+        var data = _storage.GetData();
+        _slider.value = data.currentVolume / Constants.MaxVolume;
         _soundContainer = ServiceLocator.Instance.GetService<SoundContainer>();
         _focusSoundController = ServiceLocator.Instance.GetService<FocusSoundController>();
     }
@@ -34,9 +36,10 @@ public class VolumeService : MonoBehaviour, IService
     }
     private void OnSoundValueChanged(float value)
     {
+        var data = _storage.GetData();
         var newVolume = value * Constants.MaxVolume;
-
-        PlayerPrefs.SetFloat(Constants.Volume, newVolume);
+        data.currentVolume = newVolume;
+        _storage.Save();
         
         if(_soundContainer != null)
         {

@@ -1,8 +1,8 @@
-using System;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
+using YG;
+using YG.LanguageLegacy;
 
 public class ThemeElement : MonoBehaviour
 {
@@ -12,9 +12,6 @@ public class ThemeElement : MonoBehaviour
 
     private RectTransform _rectTransform;
     private ThemeColorSet _colorSet;
-    private string _localizationKey = null;
-
-    public event Action<ThemeColorSet> ThemeChanged;
 
     private void Awake()
     {
@@ -28,27 +25,18 @@ public class ThemeElement : MonoBehaviour
 
     private void Update()
     {
-        if (string.IsNullOrEmpty(_localizationKey))
+        if(_colorSet == null)
         {
             return;
         }
 
-        var table = LocalizationSettings.StringDatabase.GetTable("localizationTable");
-        if (table != null)
-        {
-            var entry = table.GetEntry(_localizationKey);
-            if (entry != null)
-            {
-                string localizedText = entry.GetLocalizedString();
-                _text.text = localizedText;
-            }
-        }
+        var lang = YG2.lang;
+        _text.text = _colorSet.GetTitle(lang);
     }
 
     public void InitializeColors(ThemeColorSet themeColorSet)
     {
         _colorSet = themeColorSet;
-        _localizationKey = themeColorSet.LocalizationKey;
 
         foreach (var color in themeColorSet.Colors)
         {
@@ -74,7 +62,7 @@ public class ThemeElement : MonoBehaviour
         }
 
         var themeService = ServiceLocator.Instance.GetService<ThemeService>();
-        if(themeService == null)
+        if (themeService == null)
         {
             return;
         }
