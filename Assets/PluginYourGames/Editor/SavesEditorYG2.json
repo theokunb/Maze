@@ -1,0 +1,22 @@
+{
+    "stringKeys": [],
+    "stringValues": [],
+    "floatKeys": [],
+    "floatValues": [],
+    "intKeys": [],
+    "intValues": [],
+    "intExample": 5,
+    "strExample": "Hello!",
+    "boolExample": [
+        false,
+        false,
+        false,
+        false
+    ],
+    "idSave": 6,
+    "maxLevel": 1,
+    "currentLevel": 1,
+    "colorSet": 1,
+    "zoom": 2.099998950958252,
+    "currentVolume": 0.0
+}
