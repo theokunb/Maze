@@ -13,6 +13,7 @@ public static class Constants
     public static string Volume = nameof(Volume);
     public static string ApplicationFocusVolume = nameof(ApplicationFocusVolume);
     public static float MaxVolume = 0.8f;
+    public static float DefaultZoom = 0.8f;
     public static int LevelCount = 50;
     public static string ColorSet = nameof(ColorSet);
 }

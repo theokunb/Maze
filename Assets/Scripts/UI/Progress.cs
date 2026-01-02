@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Progress : MonoBehaviour
+public class Progress : MonoBehaviour, IService
 {
     [SerializeField] private TMP_Text _levelText;
     [SerializeField] private Button _increaseButton;
@@ -25,9 +25,7 @@ public class Progress : MonoBehaviour
 
     private void Start()
     {
-        _maxLevel = PlayerPrefs.GetInt(Constants.MaxLevel, 1);
-
-        SetCurrentLevel(_maxLevel);
+        UpdateFromStorage();
     }
 
     private void OnIncrease()
@@ -55,6 +53,17 @@ public class Progress : MonoBehaviour
         _currentLevel = value;
         _levelText.text = value.ToString();
 
-        PlayerPrefs.SetInt(Constants.Level, _currentLevel);
+        var storage = ServiceLocator.Instance.GetService<IStorage>();
+        var data = storage.GetData();
+        data.currentLevel = _currentLevel;
+    }
+
+    public void UpdateFromStorage()
+    {
+        var storage = ServiceLocator.Instance.GetService<IStorage>();
+        var data = storage.GetData();
+        _maxLevel = data.maxLevel;
+
+        SetCurrentLevel(data.currentLevel);
     }
 }

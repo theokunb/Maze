@@ -26,4 +26,17 @@ public class ToysService : MonoBehaviour, IService
 
         _toy.transform.rotation = Quaternion.identity;
     }
+
+    public void SetToyActive(bool active)
+    {
+        if(_toy == null)
+        {
+            return;
+        }
+
+        if(_toy.TryGetComponent(out Rotatable rotatable))
+        {
+            rotatable.enabled = active;
+        }
+    }
 }

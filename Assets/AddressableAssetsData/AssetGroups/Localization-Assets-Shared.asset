@@ -14,20 +14,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_GroupName: Localization-Assets-Shared
   m_GUID: a0035c5129b90cc42b2f0707d28d0524
-  m_SerializeEntries:
-  - m_GUID: 6507cd1c1c9a8e14daef10ec97bb247f
-    m_Address: Assets/Localization/AssetsTable Shared Data.asset
-    m_ReadOnly: 1
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: edb4f4cf34007224b91b5dd216a72b37
-    m_Address: Assets/Localization/localization Table Shared Data.asset
-    m_ReadOnly: 1
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
+  m_SerializeEntries: []
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 66c048a6564f997418902eecac7af003, type: 2}
   m_SchemaSet:
     m_Schemas:
     - {fileID: 11400000, guid: 2d7b09456448da140aa3749e81e64024, type: 2}
     - {fileID: 11400000, guid: 58b4bf69076cabd408abdddd008248f2, type: 2}
+  m_FolderEntryCache: []
+  <FlaggedDuringContentUpdateRestriction>k__BackingField: 0
+  m_CurrentHash:
+    'bytes[0]': 184
+    'bytes[1]': 176
+    'bytes[2]': 21
+    'bytes[3]': 144
+    'bytes[4]': 217
+    'bytes[5]': 62
+    'bytes[6]': 224
+    'bytes[7]': 1
+    'bytes[8]': 37
+    'bytes[9]': 183
+    'bytes[10]': 80
+    'bytes[11]': 98
+    'bytes[12]': 171
+    'bytes[13]': 55
+    'bytes[14]': 69
+    'bytes[15]': 97

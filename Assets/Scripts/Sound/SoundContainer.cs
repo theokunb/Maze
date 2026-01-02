@@ -2,14 +2,8 @@ using UnityEngine;
 
 public class SoundContainer : MonoBehaviour, IService
 {
+    [SerializeField] private AudioSource _audioSource;
     [SerializeField] private AudioClip[] _clips;
-
-    private AudioSource _audioSource;
-
-    private void Awake()
-    {
-        _audioSource = GetComponent<AudioSource>();
-    }
 
     private void Start()
     {
@@ -28,16 +22,16 @@ public class SoundContainer : MonoBehaviour, IService
 
     public void UpdateVolume()
     {
-        var volume = PlayerPrefs.GetFloat(Constants.Volume, Constants.MaxVolume);
+        var storage = ServiceLocator.Instance.GetService<IStorage>();
+        var data = storage.GetData();
+        var volume = data.currentVolume;
 
         _audioSource.volume = volume;
     }
 
-    public void UpdateFromApplicationFocusVolume()
+    public void UpdateFromApplicationFocusVolume(float applicationFocusVolume)
     {
-        var volume = PlayerPrefs.GetFloat(Constants.ApplicationFocusVolume, Constants.MaxVolume);
-
-        _audioSource.volume = volume;
+        _audioSource.volume = applicationFocusVolume;
     }
 
     private AudioClip GetRandomClip()

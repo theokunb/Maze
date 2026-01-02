@@ -9,10 +9,10 @@ public class CameraFollow : MonoBehaviour, IService
     private float _zoom;
     private PlayerInput _playerInput;
     private Base _base;
+    private IStorage _storage;
 
     private void Awake()
     {
-        _zoom = PlayerPrefs.GetFloat(Constants.Zoom, 1.7f);
         _startPosition = transform.position;
         _playerInput = new PlayerInput();
     }
@@ -27,6 +27,19 @@ public class CameraFollow : MonoBehaviour, IService
     {
         _playerInput.Disable();
         _playerInput.PlayerMap.MouseWheel.performed -= OnMouseWheel;
+
+
+        if (_storage != null)
+        {
+            _storage.Save();
+        }
+    }
+
+    private void Start()
+    {
+        _storage = ServiceLocator.Instance.GetService<IStorage>();
+        var data = _storage.GetData();
+        _zoom = data.zoom;
     }
 
     public void OnBaseSizeChanged()
@@ -44,10 +57,10 @@ public class CameraFollow : MonoBehaviour, IService
         var value = obj.ReadValue<float>();
         _zoom = (-1) * value * 0.05f + _zoom;
         _zoom = Mathf.Clamp(_zoom, _minZoom, _maxZoom);
-        Debug.Log(_zoom);
 
         OnBaseSizeChanged();
-        PlayerPrefs.SetFloat(Constants.Zoom, _zoom);
+        var data = _storage.GetData();
+        data.zoom = _zoom;
     }
 
     public void SetBase(Base mazeBase) => _base = mazeBase;

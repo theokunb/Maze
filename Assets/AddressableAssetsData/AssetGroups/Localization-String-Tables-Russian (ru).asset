@@ -14,16 +14,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_GroupName: Localization-String-Tables-Russian (ru)
   m_GUID: 611f4b351861bd64e8b7facb2cf530e6
-  m_SerializeEntries:
-  - m_GUID: dec8f0aa02d83bb4896889cb2b4b38d1
-    m_Address: localizationTable_ru
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-ru
-    FlaggedDuringContentUpdateRestriction: 0
+  m_SerializeEntries: []
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 66c048a6564f997418902eecac7af003, type: 2}
   m_SchemaSet:
     m_Schemas:
     - {fileID: 11400000, guid: 8221c2b0a25500c4bb773c634997c59a, type: 2}
     - {fileID: 11400000, guid: 283e54496c4e84b45943f7e3f3a1a632, type: 2}
+  m_FolderEntryCache: []
+  <FlaggedDuringContentUpdateRestriction>k__BackingField: 0
+  m_CurrentHash:
+    'bytes[0]': 229
+    'bytes[1]': 216
+    'bytes[2]': 114
+    'bytes[3]': 180
+    'bytes[4]': 203
+    'bytes[5]': 68
+    'bytes[6]': 235
+    'bytes[7]': 203
+    'bytes[8]': 243
+    'bytes[9]': 6
+    'bytes[10]': 136
+    'bytes[11]': 254
+    'bytes[12]': 102
+    'bytes[13]': 178
+    'bytes[14]': 35
+    'bytes[15]': 10

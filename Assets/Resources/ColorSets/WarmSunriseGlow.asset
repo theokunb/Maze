@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: WarmSunriseGlow
   m_EditorClassIdentifier: Assembly-CSharp::ThemeColorSet
   _id: 4
-  _localizationKey: WarmSunriseGlow
   _colors:
   - {r: 1, g: 0.84313726, b: 0, a: 1}
   - {r: 0.5568628, g: 0.5568628, b: 0.5568628, a: 1}
@@ -22,3 +21,7 @@ MonoBehaviour:
   - {r: 1, g: 0, b: 0, a: 1}
   - {r: 0.16037738, g: 0.16037738, b: 0.16037738, a: 1}
   _skyboxMaterial: {fileID: 2100000, guid: 4403614bd76feab43a395ac1f99cfaf4, type: 2}
+  _ruTitle: "\u0422\u0435\u043F\u043B\u044B\u0439 \u0432\u043E\u0441\u0445\u043E\u0434
+    \u0441\u043E\u043B\u043D\u0446\u0430"
+  _enTitle: Warm Sunrise Glow
+  _trTitle: "S\u0131cak G\xFCndo\u011Fumu Par\u0131lt\u0131s\u0131"

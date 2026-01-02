@@ -14,16 +14,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_GroupName: Localization-Asset-Tables-English (en)
   m_GUID: 64f44018d4bf9e6439b74190e1491abb
-  m_SerializeEntries:
-  - m_GUID: 5dec73f736be9044bb7c4d33343db45b
-    m_Address: AssetsTable_en
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en
-    FlaggedDuringContentUpdateRestriction: 0
+  m_SerializeEntries: []
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 66c048a6564f997418902eecac7af003, type: 2}
   m_SchemaSet:
     m_Schemas:
     - {fileID: 11400000, guid: 255637a12137f2542848754b33d587e6, type: 2}
     - {fileID: 11400000, guid: d8e66cc11134ff94a9bd5971278ad879, type: 2}
+  m_FolderEntryCache: []
+  <FlaggedDuringContentUpdateRestriction>k__BackingField: 0
+  m_CurrentHash:
+    'bytes[0]': 223
+    'bytes[1]': 3
+    'bytes[2]': 19
+    'bytes[3]': 3
+    'bytes[4]': 181
+    'bytes[5]': 121
+    'bytes[6]': 59
+    'bytes[7]': 149
+    'bytes[8]': 120
+    'bytes[9]': 248
+    'bytes[10]': 80
+    'bytes[11]': 53
+    'bytes[12]': 48
+    'bytes[13]': 242
+    'bytes[14]': 11
+    'bytes[15]': 120
