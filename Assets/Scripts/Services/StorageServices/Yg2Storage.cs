@@ -2,27 +2,53 @@ using UnityEngine;
 using YG;
 using YG.Insides;
 
-public class Yg2Storage : IStorage
+public class Yg2Storage : MonoBehaviour, IStorage
 {
     private SaveData _data;
 
-    public SaveData GetData()
+    private void Awake()
     {
-        return _data;
+        _data = new SaveData();
     }
+
+    private void OnEnable()
+    {
+        YG2.onGetSDKData += OnGetSdkData;
+    }
+
+    private void OnDisable()
+    {
+        YG2.onGetSDKData -= OnGetSdkData;
+    }
+
+    public SaveData GetData() => _data;
 
     public void Load()
     {
         YGInsides.LoadProgress();
+    }
 
+    public void Save()
+    {
+        YG2.saves.maxLevel = _data.maxLevel;
+        YG2.saves.currentLevel = _data.currentLevel;
+        YG2.saves.colorSet = _data.colorSet;
+        YG2.saves.zoom = _data.zoom;
+        YG2.saves.currentVolume = _data.currentVolume;
+
+        YG2.SaveProgress();
+    }
+
+    private void OnGetSdkData()
+    {
         var maxLevel = YG2.saves.maxLevel;
-        if(maxLevel < 1)
+        if (maxLevel < 1)
         {
             maxLevel = 1;
         }
 
         var currentLevel = YG2.saves.currentLevel;
-        if (currentLevel < 1) 
+        if (currentLevel < 1)
         {
             currentLevel = 1;
         }
@@ -36,36 +62,16 @@ public class Yg2Storage : IStorage
             zoom = Constants.DefaultZoom;
         }
 
-        _data = new SaveData()
+        _data.maxLevel = maxLevel;
+        _data.colorSet = YG2.saves.colorSet;
+        _data.currentLevel = currentLevel;
+        _data.currentVolume = currentVolume;
+        _data.zoom = zoom;
+
+        var authService = ServiceLocator.Instance.GetService<AuthService>();
+        if (authService != null)
         {
-            maxLevel = maxLevel,
-            colorSet = YG2.saves.colorSet,
-            currentLevel = currentLevel,
-            currentVolume = currentVolume,
-            zoom = zoom,
-        };
-    }
-
-    public void Save()
-    {
-        YG2.saves.maxLevel = _data.maxLevel;
-        YG2.saves.currentLevel = _data.currentLevel;
-        YG2.saves.colorSet = _data.colorSet;
-        YG2.saves.zoom = _data.zoom;
-        YG2.saves.currentVolume = _data.currentVolume;
-
-        YG2.SaveProgress();
-    }
-}
-
-namespace YG
-{
-    public partial class SavesYG
-    {
-        public int maxLevel;
-        public int currentLevel;
-        public int colorSet;
-        public float zoom;
-        public float currentVolume;
+            authService.UpdateData();
+        }
     }
 }

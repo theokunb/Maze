@@ -23,11 +23,7 @@ public class ThemeService : MonoBehaviour, IService
     private void Start()
     {
         _storage = ServiceLocator.Instance.GetService<IStorage>();
-        var data = _storage.GetData();
-        var setId = data.colorSet;
-        SetId = setId;
-
-        ApplySet(SetId);
+        UpdateFromStorage();
     }
 
     public void ApplySet(int setId)
@@ -63,7 +59,16 @@ public class ThemeService : MonoBehaviour, IService
         if(setId != data.colorSet)
         {
             data.colorSet = setId;
-            _storage.Save();
         }
+    }
+
+    public void UpdateFromStorage()
+    {
+        _storage = ServiceLocator.Instance.GetService<IStorage>();
+        var data = _storage.GetData();
+        var setId = data.colorSet;
+        SetId = setId;
+
+        ApplySet(SetId);
     }
 }

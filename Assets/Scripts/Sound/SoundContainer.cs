@@ -2,19 +2,11 @@ using UnityEngine;
 
 public class SoundContainer : MonoBehaviour, IService
 {
+    [SerializeField] private AudioSource _audioSource;
     [SerializeField] private AudioClip[] _clips;
-
-    private AudioSource _audioSource;
-    private IStorage _storage;
-
-    private void Awake()
-    {
-        _audioSource = GetComponent<AudioSource>();
-    }
 
     private void Start()
     {
-        _storage = ServiceLocator.Instance.GetService<IStorage>();
         UpdateVolume();
     }
 
@@ -30,7 +22,8 @@ public class SoundContainer : MonoBehaviour, IService
 
     public void UpdateVolume()
     {
-        var data = _storage.GetData();
+        var storage = ServiceLocator.Instance.GetService<IStorage>();
+        var data = storage.GetData();
         var volume = data.currentVolume;
 
         _audioSource.volume = volume;

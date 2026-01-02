@@ -39,7 +39,6 @@ public class VolumeService : MonoBehaviour, IService
         var data = _storage.GetData();
         var newVolume = value * Constants.MaxVolume;
         data.currentVolume = newVolume;
-        _storage.Save();
         
         if(_soundContainer != null)
         {
