@@ -46,6 +46,10 @@ public class Yg2Storage : MonoBehaviour, IStorage
         {
             maxLevel = 1;
         }
+        if (maxLevel > Constants.LevelCount)
+        {
+            maxLevel = Constants.LevelCount;
+        }
 
         var currentLevel = YG2.saves.currentLevel;
         if (currentLevel < 1)
