@@ -33,10 +33,10 @@ public class GameService : MonoBehaviour, IService
         toy.Load(levelInfo);
         _toysService.SetToy(toy);
 
-        var gameMenu = ServiceLocator.Instance.GetService<GameMenu>();
-        if (gameMenu != null)
+        var gameWindow = ServiceLocator.Instance.GetService<GameWindow>();
+        if (gameWindow != null)
         {
-            gameMenu.SetLevelLabel();
+            gameWindow.SetLevelLabel();
         }
     }
 
@@ -59,10 +59,10 @@ public class GameService : MonoBehaviour, IService
         }
         _storage.Save();
 
-        var gameMenu = ServiceLocator.Instance.GetService<GameMenu>();
-        if (gameMenu != null)
+        var gameWindow = ServiceLocator.Instance.GetService<GameWindow>();
+        if (gameWindow != null)
         {
-            gameMenu.OnFinish();
+            gameWindow.OnFinish();
         }
     }
 }

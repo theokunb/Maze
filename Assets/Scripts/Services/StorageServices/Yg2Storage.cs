@@ -42,9 +42,9 @@ public class Yg2Storage : MonoBehaviour, IStorage
     private void OnGetSdkData()
     {
         var maxLevel = YG2.saves.maxLevel;
-        if (maxLevel < 1)
+        if (maxLevel < Constants.MinLevel)
         {
-            maxLevel = 1;
+            maxLevel = Constants.MinLevel;
         }
         if (maxLevel > Constants.LevelCount)
         {
@@ -52,9 +52,9 @@ public class Yg2Storage : MonoBehaviour, IStorage
         }
 
         var currentLevel = YG2.saves.currentLevel;
-        if (currentLevel < 1)
+        if (currentLevel < Constants.MinLevel)
         {
-            currentLevel = 1;
+            currentLevel = Constants.MinLevel;
         }
 
         var currentVolume = YG2.saves.currentVolume;

@@ -15,11 +15,6 @@ public class AuthService : MonoBehaviour, IService
         YG2.onGetSDKData -= OnGetSdkData;
     }
 
-    public void OnClose()
-    {
-        gameObject.SetActive(false);
-    }
-
     public void Auth()
     {
         YG2.OpenAuthDialog();
@@ -27,7 +22,11 @@ public class AuthService : MonoBehaviour, IService
 
     public void OnGetSdkData()
     {
-        OnClose();
+        var authWindow = ServiceLocator.Instance.GetService<AuthWindow>();
+        if (authWindow != null)
+        {
+            authWindow.OnClose();
+        }
 
         var storage = ServiceLocator.Instance.GetService<IStorage>();
         if (storage != null)

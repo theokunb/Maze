@@ -45,7 +45,7 @@ public class Progress : MonoBehaviour, IService
             return;
         }
 
-        if(value < 1)
+        if(value < Constants.MinLevel)
         {
             return;
         }
