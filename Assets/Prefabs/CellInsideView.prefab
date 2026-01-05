@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5884115836584156873}
   - component: {fileID: 1970555023996624411}
   m_Layer: 0
-  m_Name: StartCell
+  m_Name: CellInsideView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67,8 +67,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0.18, z: 0}
+  m_Radius: 0.35
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &1970555023996624411
 Animator:
   serializedVersion: 7
