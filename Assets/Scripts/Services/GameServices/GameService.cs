@@ -24,7 +24,7 @@ public class GameService : MonoBehaviour, IService
         OnLevelInfoLoaded(levelInfo);
     }
 
-    private void OnLevelInfoLoaded(LevelInfo levelInfo)
+    private async void OnLevelInfoLoaded(LevelInfo levelInfo)
     {
         var sideCount = levelInfo.OtherArray().Count() + 1;
         var toyPrefab = _toysService.GetToyPrefab(sideCount);
@@ -37,6 +37,19 @@ public class GameService : MonoBehaviour, IService
         if (gameWindow != null)
         {
             gameWindow.SetLevelLabel();
+        }
+
+        var tutorialService = ServiceLocator.Instance.GetService<TutorialService>();
+        if (tutorialService != null)
+        {
+            var startPointTutorial = new StartPointTutorial();
+            tutorialService.AddTutorialStep(startPointTutorial);
+            var holePointTutorial = new HolePointTutorial();
+            tutorialService.AddTutorialStep(holePointTutorial);
+            var finishPointTutorial = new FinishPointTutorial();
+            tutorialService.AddTutorialStep(finishPointTutorial);
+
+            await tutorialService.Run();
         }
     }
 

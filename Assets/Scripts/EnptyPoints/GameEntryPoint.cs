@@ -7,6 +7,7 @@ public class GameEntryPoint : EntryPoint
     [SerializeField] private GameWindow _gameWindow;
     [SerializeField] private PauseWindow _pauseWindow;
     [SerializeField] private FinishWindow _finishWindow;
+    [SerializeField] private TutorialWindow _tutorialWindow;
 
     [Space(10)]
     [SerializeField] private CameraFollow _cameraFollow;
@@ -27,6 +28,7 @@ public class GameEntryPoint : EntryPoint
         ServiceLocator.Instance.Register(_toysService);
         ServiceLocator.Instance.Register(_themeService);
         ServiceLocator.Instance.Register(_tutorialService);
+        ServiceLocator.Instance.Register(_tutorialWindow);
     }
 
     private void OnDestroy()
@@ -41,5 +43,6 @@ public class GameEntryPoint : EntryPoint
         ServiceLocator.Instance.Unregister<ToysService>();
         ServiceLocator.Instance.Unregister<ThemeService>();
         ServiceLocator.Instance.Unregister<TutorialService>();
+        ServiceLocator.Instance.Unregister<TutorialWindow>();
     }
 }
