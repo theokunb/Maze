@@ -15,5 +15,6 @@ public static class Constants
     public static float MaxVolume = 0.8f;
     public static float DefaultZoom = 0.8f;
     public static int LevelCount = 10;
+    public static int MinLevel = 0;
     public static string ColorSet = nameof(ColorSet);
 }

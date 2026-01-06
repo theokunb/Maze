@@ -24,7 +24,7 @@ public class GameService : MonoBehaviour, IService
         OnLevelInfoLoaded(levelInfo);
     }
 
-    private void OnLevelInfoLoaded(LevelInfo levelInfo)
+    private async void OnLevelInfoLoaded(LevelInfo levelInfo)
     {
         var sideCount = levelInfo.OtherArray().Count() + 1;
         var toyPrefab = _toysService.GetToyPrefab(sideCount);
@@ -33,10 +33,25 @@ public class GameService : MonoBehaviour, IService
         toy.Load(levelInfo);
         _toysService.SetToy(toy);
 
-        var gameMenu = ServiceLocator.Instance.GetService<GameMenu>();
-        if (gameMenu != null)
+        var gameWindow = ServiceLocator.Instance.GetService<GameWindow>();
+        if (gameWindow != null)
         {
-            gameMenu.SetLevelLabel();
+            gameWindow.SetLevelLabel();
+        }
+
+        var tutorialService = ServiceLocator.Instance.GetService<TutorialService>();
+        if (tutorialService != null)
+        {
+            var startPointTutorial = new StartPointTutorial();
+            tutorialService.AddTutorialStep(startPointTutorial);
+            var holePointTutorial = new HolePointTutorial();
+            tutorialService.AddTutorialStep(holePointTutorial);
+            var finishPointTutorial = new FinishPointTutorial();
+            tutorialService.AddTutorialStep(finishPointTutorial);
+            var movementTutorial = new MovementTutorial();
+            tutorialService.AddTutorialStep(movementTutorial);
+
+            await tutorialService.Run();
         }
     }
 
@@ -59,10 +74,10 @@ public class GameService : MonoBehaviour, IService
         }
         _storage.Save();
 
-        var gameMenu = ServiceLocator.Instance.GetService<GameMenu>();
-        if (gameMenu != null)
+        var gameWindow = ServiceLocator.Instance.GetService<GameWindow>();
+        if (gameWindow != null)
         {
-            gameMenu.OnFinish();
+            gameWindow.OnFinish();
         }
     }
 }

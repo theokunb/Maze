@@ -2,7 +2,13 @@ using UnityEngine;
 
 public class MenuEntryPoint : EntryPoint
 {
-    [SerializeField] private MainMenuService _mainMenu;
+    [Header("Windows")]
+    [SerializeField] private WindowService _windowService;
+    [SerializeField] private MainMenuWindow _mainMenuWindow;
+    [SerializeField] private SettingsWindow _settingsWindow;
+    [SerializeField] private AuthWindow _authWindow;
+
+    [Space(10)]
     [SerializeField] private VolumeService _volumeService;
     [SerializeField] private ThemeService _themeService;
     [SerializeField] private Progress _progress;
@@ -18,10 +24,14 @@ public class MenuEntryPoint : EntryPoint
 
     private void Awake()
     {
+        ServiceLocator.Instance.Register(_windowService);
+        ServiceLocator.Instance.Register(_mainMenuWindow);
+        ServiceLocator.Instance.Register(_settingsWindow);
+        ServiceLocator.Instance.Register(_authWindow);
+
         ServiceLocator.Instance.Register(_testService);
         ServiceLocator.Instance.Register(_authService);
         ServiceLocator.Instance.Register(_progress);
-        ServiceLocator.Instance.Register(_mainMenu);
         ServiceLocator.Instance.Register(_volumeService);
         ServiceLocator.Instance.Register(_themeService);
 
@@ -44,11 +54,16 @@ public class MenuEntryPoint : EntryPoint
 
     private void OnDestroy()
     {
+        ServiceLocator.Instance.Unregister<WindowService>();
+        ServiceLocator.Instance.Unregister<MainMenuWindow>();
+        ServiceLocator.Instance.Unregister<SettingsWindow>();
+        ServiceLocator.Instance.Unregister<AuthWindow>();
+
+
         ServiceLocator.Instance.Unregister<TestService>();
         ServiceLocator.Instance.Unregister<AuthService>();
         ServiceLocator.Instance.Unregister<Progress>();
         ServiceLocator.Instance.Unregister<ThemeService>();
-        ServiceLocator.Instance.Unregister<MainMenuService>();
         ServiceLocator.Instance.Unregister<VolumeService>();
     }
 

@@ -39,6 +39,9 @@ public class Toy : MonoBehaviour
         player.Setup(cellInsideView.transform, _main.Size);
         player.ReturnToStart();
 
+        var tutorialService = ServiceLocator.Instance.GetService<TutorialService>();
+        tutorialService.AddTutorialStep(new ShowPlayerTutorial(player.transform));
+
         int i = 0;
         foreach (var other in levelInfo.OtherArray())
         {
