@@ -6,6 +6,7 @@ public class TutorialWindow : CustomWindow
 {
     [SerializeField] private GameObject _playerIndicator;
     [SerializeField] private PointTutorial _pointTutorial;
+    [SerializeField] private GameObject _movementTutorial;
 
     [Header("Tutorial Texts")]
     [SerializeField] TMP_Text _startPointTutorialText;
@@ -86,6 +87,16 @@ public class TutorialWindow : CustomWindow
 
         await WaitClose();
         Destroy(pointTutorial.gameObject);
+    }
+
+    public async Task MovementTutorial()
+    {
+        _pressed = false;
+
+        var movementTutorial = Instantiate(_movementTutorial, transform);
+
+        await WaitClose();
+        Destroy(movementTutorial.gameObject);
     }
 
     private async Task WaitClose()

@@ -15,6 +15,7 @@ public class GameEntryPoint : EntryPoint
     [SerializeField] private ToysService _toysService;
     [SerializeField] private ThemeService _themeService;
     [SerializeField] private TutorialService _tutorialService;
+    [SerializeField] private Yg2Storage _yg2Storage;
 
     private void Awake()
     {
@@ -29,6 +30,19 @@ public class GameEntryPoint : EntryPoint
         ServiceLocator.Instance.Register(_themeService);
         ServiceLocator.Instance.Register(_tutorialService);
         ServiceLocator.Instance.Register(_tutorialWindow);
+
+        var storage = ServiceLocator.Instance.GetService<IStorage>();
+        if (storage == null)
+        {
+            storage = _yg2Storage;
+            ServiceLocator.Instance.Register(storage);
+            DontDestroyOnLoad(_yg2Storage);
+        }
+        else
+        {
+            Destroy(_yg2Storage.gameObject);
+        }
+        storage.Load();
     }
 
     private void OnDestroy()
@@ -44,5 +58,19 @@ public class GameEntryPoint : EntryPoint
         ServiceLocator.Instance.Unregister<ThemeService>();
         ServiceLocator.Instance.Unregister<TutorialService>();
         ServiceLocator.Instance.Unregister<TutorialWindow>();
+    }
+
+    private void RegisterDontDestroy<T>(T service) where T : MonoBehaviour, IService
+    {
+        var registerd = ServiceLocator.Instance.GetService<T>();
+        if (registerd == null)
+        {
+            ServiceLocator.Instance.Register(service);
+            DontDestroyOnLoad(service);
+        }
+        else
+        {
+            Destroy(service.gameObject);
+        }
     }
 }

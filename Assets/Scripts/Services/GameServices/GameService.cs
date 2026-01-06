@@ -48,6 +48,8 @@ public class GameService : MonoBehaviour, IService
             tutorialService.AddTutorialStep(holePointTutorial);
             var finishPointTutorial = new FinishPointTutorial();
             tutorialService.AddTutorialStep(finishPointTutorial);
+            var movementTutorial = new MovementTutorial();
+            tutorialService.AddTutorialStep(movementTutorial);
 
             await tutorialService.Run();
         }

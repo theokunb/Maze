@@ -99,6 +99,7 @@ public class MovementTutorial : ITutorialStep
 {
     public async Task Invoke()
     {
-
+        var tutorialWindow = ServiceLocator.Instance.GetService<TutorialWindow>();
+        await tutorialWindow.MovementTutorial();
     }
 }
