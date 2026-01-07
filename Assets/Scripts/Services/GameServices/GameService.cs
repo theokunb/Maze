@@ -13,7 +13,7 @@ public class GameService : MonoBehaviour, IService
 
         var data = _storage.GetData();
         int level = data.currentLevel;
-        level = Mathf.Clamp(level, 1, Constants.LevelCount);
+        level = Mathf.Clamp(level, 0, Constants.LevelCount);
 
         var levelInfo = Resources.Load<LevelInfo>($"Level {level}");
         if(levelInfo == null)

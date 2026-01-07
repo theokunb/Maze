@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using YG;
 
 public class PreloadScene : MonoBehaviour
 {
