@@ -265,13 +265,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1184420568529826311}
   serializedVersion: 2
-  m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: -0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 0.01, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1666549938443418265}
-  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 180, y: -180, z: 0}
 --- !u!33 &5275033246382563105
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1041,8 +1041,8 @@ MonoBehaviour:
   - {fileID: 3564580988285121402}
   - {fileID: 3578757539448112593}
   - {fileID: 7185546927562901464}
-  - {fileID: 4085458863482746467}
   - {fileID: 321831216861381765}
+  - {fileID: 4085458863482746467}
   _playerTemplate: {fileID: 961129337121378830, guid: 3f0ff57448ef0514bbb08b3e96430c54, type: 3}
   _template: {fileID: 640351621829723775, guid: dd0509e406777364f94577f14e033a33, type: 3}
   _materialForStart: {fileID: 2100000, guid: b490603c69616204db6b8eff4e0f7812, type: 2}
@@ -1173,7 +1173,7 @@ GameObject:
   - component: {fileID: 1493708447860854166}
   - component: {fileID: 321831216861381765}
   m_Layer: 0
-  m_Name: MazeBack
+  m_Name: MazeForward
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1187,13 +1187,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6775901766197126825}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: -0.7071068}
   m_LocalPosition: {x: 0, y: -0, z: -0.5}
   m_LocalScale: {x: 1, y: 0.01, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1666549938443418265}
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 180, z: 180}
 --- !u!33 &1394267776784611723
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1632,7 +1632,7 @@ GameObject:
   - component: {fileID: 4659569561462279428}
   - component: {fileID: 4085458863482746467}
   m_Layer: 0
-  m_Name: MazeForward
+  m_Name: MazeBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
