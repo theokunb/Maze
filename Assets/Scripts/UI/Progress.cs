@@ -7,6 +7,7 @@ public class Progress : MonoBehaviour, IService
     [SerializeField] private TMP_Text _levelText;
     [SerializeField] private Button _increaseButton;
     [SerializeField] private Button _decreaseButton;
+    [SerializeField] private GameObject _crownImage;
 
     private int _maxLevel;
     private int _currentLevel;
@@ -52,6 +53,8 @@ public class Progress : MonoBehaviour, IService
 
         _currentLevel = value;
         _levelText.text = value.ToString();
+
+        _crownImage.SetActive(_currentLevel == Constants.LevelCount);
 
         var storage = ServiceLocator.Instance.GetService<IStorage>();
         var data = storage.GetData();
