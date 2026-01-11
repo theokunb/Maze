@@ -93,10 +93,10 @@ MonoBehaviour:
     "BottomBound": true,          "Plurality": {             "Id": 60          },         
     "CellInside": 0       },       {          "LeftBound": false,          "UpperBound":
     false,          "RightBound": false,          "BottomBound": true,          "Plurality":
-    {             "Id": 60          },          "CellInside": 0       },       {         
+    {             "Id": 60          },          "CellInside": 3       },       {         
     "LeftBound": false,          "UpperBound": false,          "RightBound": true,         
     "BottomBound": false,          "Plurality": {             "Id": 60          },         
-    "CellInside": 3       },       {          "LeftBound": false,          "UpperBound":
+    "CellInside": 0       },       {          "LeftBound": false,          "UpperBound":
     false,          "RightBound": false,          "BottomBound": true,          "Plurality":
     {             "Id": 59          },          "CellInside": 0       },       {         
     "LeftBound": false,          "UpperBound": false,          "RightBound": false,         
@@ -137,8 +137,633 @@ MonoBehaviour:
     "CellInside": 0       },       {          "LeftBound": false,          "UpperBound":
     false,          "RightBound": true,          "BottomBound": true,          "Plurality":
     {             "Id": 52          },          "CellInside": 0       }    ] ]'
-  Left: '[]'
-  Right: '[]'
-  Bottom: '[]'
-  Forward: '[]'
-  Back: '[]'
+  Left: '[    [       {          "LeftBound": true,          "UpperBound": false,         
+    "RightBound": false,          "BottomBound": false,          "Plurality": {            
+    "Id": 46          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": true,          "RightBound": false,          "BottomBound":
+    true,          "Plurality": {             "Id": 48          },          "CellInside":
+    0       },       {          "LeftBound": false,          "UpperBound": true,         
+    "RightBound": false,          "BottomBound": true,          "Plurality": {            
+    "Id": 48          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": true,          "RightBound": false,          "BottomBound":
+    true,          "Plurality": {             "Id": 48          },          "CellInside":
+    0       },       {          "LeftBound": false,          "UpperBound": true,         
+    "RightBound": false,          "BottomBound": false,          "Plurality": {            
+    "Id": 51          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": true,          "RightBound": false,          "BottomBound":
+    false,          "Plurality": {             "Id": 52          },          "CellInside":
+    0       },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": false,          "BottomBound": false,          "Plurality": {            
+    "Id": 52          },          "CellInside": 0       }    ],    [       {         
+    "LeftBound": true,          "UpperBound": false,          "RightBound": false,         
+    "BottomBound": true,          "Plurality": {             "Id": 53          },         
+    "CellInside": 0       },       {          "LeftBound": false,          "UpperBound":
+    false,          "RightBound": false,          "BottomBound": false,         
+    "Plurality": {             "Id": 53          },          "CellInside": 0      
+    },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": false,          "BottomBound": false,          "Plurality": {            
+    "Id": 53          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": false,          "RightBound": true,          "BottomBound":
+    true,          "Plurality": {             "Id": 54          },          "CellInside":
+    0       },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": false,          "BottomBound": false,          "Plurality": {            
+    "Id": 51          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": false,          "RightBound": false,          "BottomBound":
+    false,          "Plurality": {             "Id": 52          },          "CellInside":
+    3       },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": false,          "BottomBound": false,          "Plurality": {            
+    "Id": 52          },          "CellInside": 0       }    ],    [       {         
+    "LeftBound": true,          "UpperBound": false,          "RightBound": false,         
+    "BottomBound": false,          "Plurality": {             "Id": 55          },         
+    "CellInside": 0       },       {          "LeftBound": false,          "UpperBound":
+    false,          "RightBound": true,          "BottomBound": true,          "Plurality":
+    {             "Id": 55          },          "CellInside": 0       },       {         
+    "LeftBound": false,          "UpperBound": false,          "RightBound": false,         
+    "BottomBound": true,          "Plurality": {             "Id": 55          },         
+    "CellInside": 0       },       {          "LeftBound": false,          "UpperBound":
+    false,          "RightBound": false,          "BottomBound": true,          "Plurality":
+    {             "Id": 54          },          "CellInside": 0       },       {         
+    "LeftBound": false,          "UpperBound": false,          "RightBound": false,         
+    "BottomBound": true,          "Plurality": {             "Id": 54          },         
+    "CellInside": 0       },       {          "LeftBound": false,          "UpperBound":
+    false,          "RightBound": false,          "BottomBound": false,         
+    "Plurality": {             "Id": 54          },          "CellInside": 0      
+    },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": true,          "BottomBound": false,          "Plurality": {            
+    "Id": 52          },          "CellInside": 0       }    ],    [       {         
+    "LeftBound": true,          "UpperBound": false,          "RightBound": false,         
+    "BottomBound": false,          "Plurality": {             "Id": 56          },         
+    "CellInside": 0       },       {          "LeftBound": false,          "UpperBound":
+    false,          "RightBound": true,          "BottomBound": false,          "Plurality":
+    {             "Id": 56          },          "CellInside": 0       },       {         
+    "LeftBound": false,          "UpperBound": false,          "RightBound": false,         
+    "BottomBound": false,          "Plurality": {             "Id": 56          },         
+    "CellInside": 0       },       {          "LeftBound": false,          "UpperBound":
+    false,          "RightBound": false,          "BottomBound": false,         
+    "Plurality": {             "Id": 56          },          "CellInside": 3      
+    },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": true,          "BottomBound": false,          "Plurality": {            
+    "Id": 56          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": false,          "RightBound": false,          "BottomBound":
+    false,          "Plurality": {             "Id": 59          },          "CellInside":
+    0       },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": false,          "BottomBound": false,          "Plurality": {            
+    "Id": 52          },          "CellInside": 3       }    ],    [       {         
+    "LeftBound": true,          "UpperBound": false,          "RightBound": false,         
+    "BottomBound": false,          "Plurality": {             "Id": 56          },         
+    "CellInside": 3       },       {          "LeftBound": false,          "UpperBound":
+    false,          "RightBound": true,          "BottomBound": false,          "Plurality":
+    {             "Id": 56          },          "CellInside": 0       },       {         
+    "LeftBound": false,          "UpperBound": false,          "RightBound": false,         
+    "BottomBound": true,          "Plurality": {             "Id": 60          },         
+    "CellInside": 0       },       {          "LeftBound": false,          "UpperBound":
+    false,          "RightBound": false,          "BottomBound": false,         
+    "Plurality": {             "Id": 60          },          "CellInside": 0      
+    },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": false,          "BottomBound": false,          "Plurality": {            
+    "Id": 60          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": false,          "RightBound": false,          "BottomBound":
+    true,          "Plurality": {             "Id": 59          },          "CellInside":
+    0       },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": true,          "BottomBound": false,          "Plurality": {            
+    "Id": 52          },          "CellInside": 0       }    ],    [       {         
+    "LeftBound": false,          "UpperBound": false,          "RightBound": true,         
+    "BottomBound": false,          "Plurality": {             "Id": 62          },         
+    "CellInside": 0       },       {          "LeftBound": false,          "UpperBound":
+    false,          "RightBound": false,          "BottomBound": false,         
+    "Plurality": {             "Id": 63          },          "CellInside": 0      
+    },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": false,          "BottomBound": false,          "Plurality": {            
+    "Id": 60          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": false,          "RightBound": true,          "BottomBound":
+    false,          "Plurality": {             "Id": 64          },          "CellInside":
+    0       },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": false,          "BottomBound": true,          "Plurality": {            
+    "Id": 60          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": false,          "RightBound": false,          "BottomBound":
+    true,          "Plurality": {             "Id": 65          },          "CellInside":
+    0       },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": true,          "BottomBound": false,          "Plurality": {            
+    "Id": 52          },          "CellInside": 0       }    ],    [       {         
+    "LeftBound": true,          "UpperBound": false,          "RightBound": false,         
+    "BottomBound": true,          "Plurality": {             "Id": 62          },         
+    "CellInside": 0       },       {          "LeftBound": false,          "UpperBound":
+    false,          "RightBound": true,          "BottomBound": true,          "Plurality":
+    {             "Id": 63          },          "CellInside": 0       },       {         
+    "LeftBound": false,          "UpperBound": false,          "RightBound": false,         
+    "BottomBound": true,          "Plurality": {             "Id": 60          },         
+    "CellInside": 0       },       {          "LeftBound": false,          "UpperBound":
+    false,          "RightBound": false,          "BottomBound": false,         
+    "Plurality": {             "Id": 64          },          "CellInside": 0      
+    },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": false,          "BottomBound": true,          "Plurality": {            
+    "Id": 60          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": false,          "RightBound": false,          "BottomBound":
+    true,          "Plurality": {             "Id": 65          },          "CellInside":
+    0       },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": true,          "BottomBound": true,          "Plurality": {            
+    "Id": 52          },          "CellInside": 0       }    ] ]'
+  Right: '[    [       {          "LeftBound": true,          "UpperBound": true,         
+    "RightBound": false,          "BottomBound": false,          "Plurality": {            
+    "Id": 46          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": true,          "RightBound": false,          "BottomBound":
+    true,          "Plurality": {             "Id": 48          },          "CellInside":
+    0       },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": false,          "BottomBound": true,          "Plurality": {            
+    "Id": 48          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": true,          "RightBound": false,          "BottomBound":
+    true,          "Plurality": {             "Id": 48          },          "CellInside":
+    0       },       {          "LeftBound": false,          "UpperBound": true,         
+    "RightBound": false,          "BottomBound": true,          "Plurality": {            
+    "Id": 51          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": true,          "RightBound": false,          "BottomBound":
+    true,          "Plurality": {             "Id": 52          },          "CellInside":
+    0       },       {          "LeftBound": false,          "UpperBound": true,         
+    "RightBound": true,          "BottomBound": true,          "Plurality": {            
+    "Id": 52          },          "CellInside": 0       }    ],    [       {         
+    "LeftBound": true,          "UpperBound": false,          "RightBound": true,         
+    "BottomBound": false,          "Plurality": {             "Id": 53          },         
+    "CellInside": 0       },       {          "LeftBound": false,          "UpperBound":
+    false,          "RightBound": false,          "BottomBound": false,         
+    "Plurality": {             "Id": 53          },          "CellInside": 0      
+    },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": false,          "BottomBound": false,          "Plurality": {            
+    "Id": 53          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": false,          "RightBound": false,          "BottomBound":
+    false,          "Plurality": {             "Id": 54          },          "CellInside":
+    0       },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": true,          "BottomBound": false,          "Plurality": {            
+    "Id": 51          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": false,          "RightBound": false,          "BottomBound":
+    false,          "Plurality": {             "Id": 52          },          "CellInside":
+    0       },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": false,          "BottomBound": false,          "Plurality": {            
+    "Id": 52          },          "CellInside": 0       }    ],    [       {         
+    "LeftBound": false,          "UpperBound": false,          "RightBound": true,         
+    "BottomBound": false,          "Plurality": {             "Id": 55          },         
+    "CellInside": 0       },       {          "LeftBound": false,          "UpperBound":
+    false,          "RightBound": false,          "BottomBound": false,         
+    "Plurality": {             "Id": 55          },          "CellInside": 3      
+    },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": true,          "BottomBound": false,          "Plurality": {            
+    "Id": 55          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": false,          "RightBound": false,          "BottomBound":
+    true,          "Plurality": {             "Id": 54          },          "CellInside":
+    0       },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": false,          "BottomBound": true,          "Plurality": {            
+    "Id": 54          },          "CellInside": 2       },       {          "LeftBound":
+    false,          "UpperBound": false,          "RightBound": false,          "BottomBound":
+    false,          "Plurality": {             "Id": 54          },          "CellInside":
+    3       },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": true,          "BottomBound": false,          "Plurality": {            
+    "Id": 52          },          "CellInside": 0       }    ],    [       {         
+    "LeftBound": false,          "UpperBound": false,          "RightBound": true,         
+    "BottomBound": false,          "Plurality": {             "Id": 56          },         
+    "CellInside": 0       },       {          "LeftBound": false,          "UpperBound":
+    false,          "RightBound": false,          "BottomBound": false,         
+    "Plurality": {             "Id": 56          },          "CellInside": 0      
+    },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": true,          "BottomBound": true,          "Plurality": {            
+    "Id": 56          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": false,          "RightBound": false,          "BottomBound":
+    false,          "Plurality": {             "Id": 56          },          "CellInside":
+    3       },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": false,          "BottomBound": false,          "Plurality": {            
+    "Id": 56          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": false,          "RightBound": false,          "BottomBound":
+    true,          "Plurality": {             "Id": 59          },          "CellInside":
+    0       },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": true,          "BottomBound": true,          "Plurality": {            
+    "Id": 52          },          "CellInside": 0       }    ],    [       {         
+    "LeftBound": true,          "UpperBound": false,          "RightBound": true,         
+    "BottomBound": false,          "Plurality": {             "Id": 56          },         
+    "CellInside": 0       },       {          "LeftBound": false,          "UpperBound":
+    false,          "RightBound": false,          "BottomBound": false,         
+    "Plurality": {             "Id": 56          },          "CellInside": 0      
+    },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": true,          "BottomBound": false,          "Plurality": {            
+    "Id": 60          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": false,          "RightBound": false,          "BottomBound":
+    true,          "Plurality": {             "Id": 60          },          "CellInside":
+    0       },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": false,          "BottomBound": true,          "Plurality": {            
+    "Id": 60          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": false,          "RightBound": false,          "BottomBound":
+    true,          "Plurality": {             "Id": 59          },          "CellInside":
+    0       },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": true,          "BottomBound": false,          "Plurality": {            
+    "Id": 52          },          "CellInside": 0       }    ],    [       {         
+    "LeftBound": true,          "UpperBound": false,          "RightBound": true,         
+    "BottomBound": false,          "Plurality": {             "Id": 62          },         
+    "CellInside": 0       },       {          "LeftBound": false,          "UpperBound":
+    false,          "RightBound": false,          "BottomBound": true,          "Plurality":
+    {             "Id": 63          },          "CellInside": 3       },       {         
+    "LeftBound": false,          "UpperBound": false,          "RightBound": false,         
+    "BottomBound": true,          "Plurality": {             "Id": 60          },         
+    "CellInside": 0       },       {          "LeftBound": false,          "UpperBound":
+    false,          "RightBound": false,          "BottomBound": true,          "Plurality":
+    {             "Id": 64          },          "CellInside": 0       },       {         
+    "LeftBound": false,          "UpperBound": false,          "RightBound": false,         
+    "BottomBound": true,          "Plurality": {             "Id": 60          },         
+    "CellInside": 0       },       {          "LeftBound": false,          "UpperBound":
+    false,          "RightBound": false,          "BottomBound": true,          "Plurality":
+    {             "Id": 65          },          "CellInside": 0       },       {         
+    "LeftBound": false,          "UpperBound": false,          "RightBound": true,         
+    "BottomBound": true,          "Plurality": {             "Id": 52          },         
+    "CellInside": 0       }    ],    [       {          "LeftBound": true,         
+    "UpperBound": false,          "RightBound": false,          "BottomBound": true,         
+    "Plurality": {             "Id": 62          },          "CellInside": 0      
+    },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": false,          "BottomBound": true,          "Plurality": {            
+    "Id": 63          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": false,          "RightBound": false,          "BottomBound":
+    false,          "Plurality": {             "Id": 60          },          "CellInside":
+    0       },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": false,          "BottomBound": false,          "Plurality": {            
+    "Id": 64          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": false,          "RightBound": false,          "BottomBound":
+    true,          "Plurality": {             "Id": 60          },          "CellInside":
+    0       },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": false,          "BottomBound": true,          "Plurality": {            
+    "Id": 65          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": false,          "RightBound": true,          "BottomBound":
+    true,          "Plurality": {             "Id": 52          },          "CellInside":
+    0       }    ] ]'
+  Bottom: '[    [       {          "LeftBound": true,          "UpperBound": true,         
+    "RightBound": false,          "BottomBound": false,          "Plurality": {            
+    "Id": 46          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": true,          "RightBound": true,          "BottomBound":
+    false,          "Plurality": {             "Id": 48          },          "CellInside":
+    0       },       {          "LeftBound": false,          "UpperBound": true,         
+    "RightBound": false,          "BottomBound": true,          "Plurality": {            
+    "Id": 48          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": false,          "RightBound": false,          "BottomBound":
+    true,          "Plurality": {             "Id": 48          },          "CellInside":
+    0       },       {          "LeftBound": false,          "UpperBound": true,         
+    "RightBound": false,          "BottomBound": true,          "Plurality": {            
+    "Id": 51          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": true,          "RightBound": false,          "BottomBound":
+    false,          "Plurality": {             "Id": 52          },          "CellInside":
+    0       },       {          "LeftBound": false,          "UpperBound": true,         
+    "RightBound": true,          "BottomBound": false,          "Plurality": {            
+    "Id": 52          },          "CellInside": 0       }    ],    [       {         
+    "LeftBound": false,          "UpperBound": false,          "RightBound": false,         
+    "BottomBound": false,          "Plurality": {             "Id": 53          },         
+    "CellInside": 0       },       {          "LeftBound": false,          "UpperBound":
+    false,          "RightBound": false,          "BottomBound": false,         
+    "Plurality": {             "Id": 53          },          "CellInside": 3      
+    },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": false,          "BottomBound": false,          "Plurality": {            
+    "Id": 53          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": false,          "RightBound": false,          "BottomBound":
+    false,          "Plurality": {             "Id": 54          },          "CellInside":
+    0       },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": true,          "BottomBound": false,          "Plurality": {            
+    "Id": 51          },          "CellInside": 3       },       {          "LeftBound":
+    false,          "UpperBound": false,          "RightBound": true,          "BottomBound":
+    false,          "Plurality": {             "Id": 52          },          "CellInside":
+    0       },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": true,          "BottomBound": false,          "Plurality": {            
+    "Id": 52          },          "CellInside": 0       }    ],    [       {         
+    "LeftBound": true,          "UpperBound": false,          "RightBound": false,         
+    "BottomBound": true,          "Plurality": {             "Id": 55          },         
+    "CellInside": 0       },       {          "LeftBound": false,          "UpperBound":
+    false,          "RightBound": false,          "BottomBound": true,          "Plurality":
+    {             "Id": 55          },          "CellInside": 0       },       {         
+    "LeftBound": false,          "UpperBound": false,          "RightBound": true,         
+    "BottomBound": true,          "Plurality": {             "Id": 55          },         
+    "CellInside": 0       },       {          "LeftBound": false,          "UpperBound":
+    false,          "RightBound": false,          "BottomBound": false,         
+    "Plurality": {             "Id": 54          },          "CellInside": 0      
+    },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": true,          "BottomBound": false,          "Plurality": {            
+    "Id": 54          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": false,          "RightBound": false,          "BottomBound":
+    true,          "Plurality": {             "Id": 54          },          "CellInside":
+    0       },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": true,          "BottomBound": false,          "Plurality": {            
+    "Id": 52          },          "CellInside": 0       }    ],    [       {         
+    "LeftBound": true,          "UpperBound": false,          "RightBound": false,         
+    "BottomBound": false,          "Plurality": {             "Id": 56          },         
+    "CellInside": 0       },       {          "LeftBound": false,          "UpperBound":
+    false,          "RightBound": false,          "BottomBound": true,          "Plurality":
+    {             "Id": 56          },          "CellInside": 0       },       {         
+    "LeftBound": false,          "UpperBound": false,          "RightBound": false,         
+    "BottomBound": true,          "Plurality": {             "Id": 56          },         
+    "CellInside": 0       },       {          "LeftBound": false,          "UpperBound":
+    false,          "RightBound": false,          "BottomBound": true,          "Plurality":
+    {             "Id": 56          },          "CellInside": 0       },       {         
+    "LeftBound": false,          "UpperBound": false,          "RightBound": false,         
+    "BottomBound": false,          "Plurality": {             "Id": 56          },         
+    "CellInside": 0       },       {          "LeftBound": false,          "UpperBound":
+    false,          "RightBound": false,          "BottomBound": false,         
+    "Plurality": {             "Id": 59          },          "CellInside": 0      
+    },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": true,          "BottomBound": true,          "Plurality": {            
+    "Id": 52          },          "CellInside": 0       }    ],    [       {         
+    "LeftBound": true,          "UpperBound": false,          "RightBound": false,         
+    "BottomBound": false,          "Plurality": {             "Id": 56          },         
+    "CellInside": 0       },       {          "LeftBound": false,          "UpperBound":
+    false,          "RightBound": false,          "BottomBound": false,         
+    "Plurality": {             "Id": 56          },          "CellInside": 0      
+    },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": true,          "BottomBound": false,          "Plurality": {            
+    "Id": 60          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": false,          "RightBound": false,          "BottomBound":
+    false,          "Plurality": {             "Id": 60          },          "CellInside":
+    0       },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": false,          "BottomBound": false,          "Plurality": {            
+    "Id": 60          },          "CellInside": 3       },       {          "LeftBound":
+    false,          "UpperBound": false,          "RightBound": false,          "BottomBound":
+    true,          "Plurality": {             "Id": 59          },          "CellInside":
+    0       },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": false,          "BottomBound": false,          "Plurality": {            
+    "Id": 52          },          "CellInside": 0       }    ],    [       {         
+    "LeftBound": true,          "UpperBound": false,          "RightBound": false,         
+    "BottomBound": false,          "Plurality": {             "Id": 62          },         
+    "CellInside": 0       },       {          "LeftBound": false,          "UpperBound":
+    false,          "RightBound": false,          "BottomBound": true,          "Plurality":
+    {             "Id": 63          },          "CellInside": 3       },       {         
+    "LeftBound": false,          "UpperBound": false,          "RightBound": false,         
+    "BottomBound": true,          "Plurality": {             "Id": 60          },         
+    "CellInside": 0       },       {          "LeftBound": false,          "UpperBound":
+    false,          "RightBound": true,          "BottomBound": false,          "Plurality":
+    {             "Id": 64          },          "CellInside": 0       },       {         
+    "LeftBound": false,          "UpperBound": false,          "RightBound": false,         
+    "BottomBound": false,          "Plurality": {             "Id": 60          },         
+    "CellInside": 0       },       {          "LeftBound": false,          "UpperBound":
+    false,          "RightBound": false,          "BottomBound": false,         
+    "Plurality": {             "Id": 65          },          "CellInside": 0      
+    },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": true,          "BottomBound": false,          "Plurality": {            
+    "Id": 52          },          "CellInside": 0       }    ],    [       {         
+    "LeftBound": true,          "UpperBound": false,          "RightBound": false,         
+    "BottomBound": true,          "Plurality": {             "Id": 62          },         
+    "CellInside": 0       },       {          "LeftBound": false,          "UpperBound":
+    false,          "RightBound": false,          "BottomBound": true,          "Plurality":
+    {             "Id": 63          },          "CellInside": 0       },       {         
+    "LeftBound": false,          "UpperBound": false,          "RightBound": false,         
+    "BottomBound": true,          "Plurality": {             "Id": 60          },         
+    "CellInside": 0       },       {          "LeftBound": false,          "UpperBound":
+    false,          "RightBound": false,          "BottomBound": true,          "Plurality":
+    {             "Id": 64          },          "CellInside": 0       },       {         
+    "LeftBound": false,          "UpperBound": false,          "RightBound": true,         
+    "BottomBound": false,          "Plurality": {             "Id": 60          },         
+    "CellInside": 0       },       {          "LeftBound": false,          "UpperBound":
+    false,          "RightBound": false,          "BottomBound": true,          "Plurality":
+    {             "Id": 65          },          "CellInside": 0       },       {         
+    "LeftBound": false,          "UpperBound": false,          "RightBound": true,         
+    "BottomBound": true,          "Plurality": {             "Id": 52          },         
+    "CellInside": 0       }    ] ]'
+  Forward: '[    [       {          "LeftBound": true,          "UpperBound": true,         
+    "RightBound": false,          "BottomBound": false,          "Plurality": {            
+    "Id": 46          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": false,          "RightBound": false,          "BottomBound":
+    false,          "Plurality": {             "Id": 48          },          "CellInside":
+    0       },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": false,          "BottomBound": false,          "Plurality": {            
+    "Id": 48          },          "CellInside": 3       },       {          "LeftBound":
+    false,          "UpperBound": true,          "RightBound": false,          "BottomBound":
+    false,          "Plurality": {             "Id": 48          },          "CellInside":
+    0       },       {          "LeftBound": false,          "UpperBound": true,         
+    "RightBound": false,          "BottomBound": true,          "Plurality": {            
+    "Id": 51          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": true,          "RightBound": false,          "BottomBound":
+    false,          "Plurality": {             "Id": 52          },          "CellInside":
+    0       },       {          "LeftBound": false,          "UpperBound": true,         
+    "RightBound": true,          "BottomBound": false,          "Plurality": {            
+    "Id": 52          },          "CellInside": 0       }    ],    [       {         
+    "LeftBound": true,          "UpperBound": false,          "RightBound": false,         
+    "BottomBound": false,          "Plurality": {             "Id": 53          },         
+    "CellInside": 0       },       {          "LeftBound": false,          "UpperBound":
+    false,          "RightBound": true,          "BottomBound": true,          "Plurality":
+    {             "Id": 53          },          "CellInside": 0       },       {         
+    "LeftBound": false,          "UpperBound": false,          "RightBound": false,         
+    "BottomBound": true,          "Plurality": {             "Id": 53          },         
+    "CellInside": 0       },       {          "LeftBound": false,          "UpperBound":
+    false,          "RightBound": true,          "BottomBound": false,          "Plurality":
+    {             "Id": 54          },          "CellInside": 0       },       {         
+    "LeftBound": false,          "UpperBound": false,          "RightBound": true,         
+    "BottomBound": false,          "Plurality": {             "Id": 51          },         
+    "CellInside": 0       },       {          "LeftBound": false,          "UpperBound":
+    false,          "RightBound": true,          "BottomBound": false,          "Plurality":
+    {             "Id": 52          },          "CellInside": 0       },       {         
+    "LeftBound": false,          "UpperBound": false,          "RightBound": true,         
+    "BottomBound": false,          "Plurality": {             "Id": 52          },         
+    "CellInside": 0       }    ],    [       {          "LeftBound": true,         
+    "UpperBound": false,          "RightBound": false,          "BottomBound": false,         
+    "Plurality": {             "Id": 55          },          "CellInside": 0      
+    },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": false,          "BottomBound": false,          "Plurality": {            
+    "Id": 55          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": false,          "RightBound": false,          "BottomBound":
+    false,          "Plurality": {             "Id": 55          },          "CellInside":
+    0       },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": false,          "BottomBound": true,          "Plurality": {            
+    "Id": 54          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": false,          "RightBound": true,          "BottomBound":
+    false,          "Plurality": {             "Id": 54          },          "CellInside":
+    0       },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": false,          "BottomBound": false,          "Plurality": {            
+    "Id": 54          },          "CellInside": 3       },       {          "LeftBound":
+    false,          "UpperBound": false,          "RightBound": false,          "BottomBound":
+    false,          "Plurality": {             "Id": 52          },          "CellInside":
+    0       }    ],    [       {          "LeftBound": false,          "UpperBound":
+    false,          "RightBound": false,          "BottomBound": false,         
+    "Plurality": {             "Id": 56          },          "CellInside": 3      
+    },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": false,          "BottomBound": false,          "Plurality": {            
+    "Id": 56          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": false,          "RightBound": true,          "BottomBound":
+    false,          "Plurality": {             "Id": 56          },          "CellInside":
+    0       },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": false,          "BottomBound": false,          "Plurality": {            
+    "Id": 56          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": false,          "RightBound": true,          "BottomBound":
+    false,          "Plurality": {             "Id": 56          },          "CellInside":
+    0       },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": true,          "BottomBound": false,          "Plurality": {            
+    "Id": 59          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": false,          "RightBound": false,          "BottomBound":
+    true,          "Plurality": {             "Id": 52          },          "CellInside":
+    0       }    ],    [       {          "LeftBound": true,          "UpperBound":
+    false,          "RightBound": false,          "BottomBound": false,         
+    "Plurality": {             "Id": 56          },          "CellInside": 0      
+    },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": true,          "BottomBound": true,          "Plurality": {            
+    "Id": 56          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": false,          "RightBound": false,          "BottomBound":
+    true,          "Plurality": {             "Id": 60          },          "CellInside":
+    0       },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": true,          "BottomBound": false,          "Plurality": {            
+    "Id": 60          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": false,          "RightBound": false,          "BottomBound":
+    true,          "Plurality": {             "Id": 60          },          "CellInside":
+    0       },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": true,          "BottomBound": false,          "Plurality": {            
+    "Id": 59          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": false,          "RightBound": true,          "BottomBound":
+    false,          "Plurality": {             "Id": 52          },          "CellInside":
+    0       }    ],    [       {          "LeftBound": true,          "UpperBound":
+    false,          "RightBound": false,          "BottomBound": false,         
+    "Plurality": {             "Id": 62          },          "CellInside": 0      
+    },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": false,          "BottomBound": true,          "Plurality": {            
+    "Id": 63          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": false,          "RightBound": true,          "BottomBound":
+    false,          "Plurality": {             "Id": 60          },          "CellInside":
+    0       },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": true,          "BottomBound": false,          "Plurality": {            
+    "Id": 64          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": false,          "RightBound": false,          "BottomBound":
+    false,          "Plurality": {             "Id": 60          },          "CellInside":
+    0       },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": false,          "BottomBound": true,          "Plurality": {            
+    "Id": 65          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": false,          "RightBound": true,          "BottomBound":
+    false,          "Plurality": {             "Id": 52          },          "CellInside":
+    0       }    ],    [       {          "LeftBound": true,          "UpperBound":
+    false,          "RightBound": false,          "BottomBound": true,          "Plurality":
+    {             "Id": 62          },          "CellInside": 0       },       {         
+    "LeftBound": false,          "UpperBound": false,          "RightBound": false,         
+    "BottomBound": true,          "Plurality": {             "Id": 63          },         
+    "CellInside": 0       },       {          "LeftBound": false,          "UpperBound":
+    false,          "RightBound": false,          "BottomBound": true,          "Plurality":
+    {             "Id": 60          },          "CellInside": 0       },       {         
+    "LeftBound": false,          "UpperBound": false,          "RightBound": false,         
+    "BottomBound": false,          "Plurality": {             "Id": 64          },         
+    "CellInside": 3       },       {          "LeftBound": false,          "UpperBound":
+    false,          "RightBound": false,          "BottomBound": false,         
+    "Plurality": {             "Id": 60          },          "CellInside": 0      
+    },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": false,          "BottomBound": true,          "Plurality": {            
+    "Id": 65          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": false,          "RightBound": true,          "BottomBound":
+    true,          "Plurality": {             "Id": 52          },          "CellInside":
+    0       }    ] ]'
+  Back: '[    [       {          "LeftBound": false,          "UpperBound": true,         
+    "RightBound": false,          "BottomBound": false,          "Plurality": {            
+    "Id": 46          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": true,          "RightBound": false,          "BottomBound":
+    true,          "Plurality": {             "Id": 48          },          "CellInside":
+    0       },       {          "LeftBound": false,          "UpperBound": true,         
+    "RightBound": false,          "BottomBound": false,          "Plurality": {            
+    "Id": 48          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": false,          "RightBound": false,          "BottomBound":
+    false,          "Plurality": {             "Id": 48          },          "CellInside":
+    3       },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": false,          "BottomBound": true,          "Plurality": {            
+    "Id": 51          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": true,          "RightBound": false,          "BottomBound":
+    false,          "Plurality": {             "Id": 52          },          "CellInside":
+    0       },       {          "LeftBound": false,          "UpperBound": true,         
+    "RightBound": true,          "BottomBound": true,          "Plurality": {            
+    "Id": 52          },          "CellInside": 0       }    ],    [       {         
+    "LeftBound": true,          "UpperBound": false,          "RightBound": false,         
+    "BottomBound": false,          "Plurality": {             "Id": 53          },         
+    "CellInside": 0       },       {          "LeftBound": false,          "UpperBound":
+    false,          "RightBound": true,          "BottomBound": false,          "Plurality":
+    {             "Id": 53          },          "CellInside": 0       },       {         
+    "LeftBound": false,          "UpperBound": false,          "RightBound": true,         
+    "BottomBound": false,          "Plurality": {             "Id": 53          },         
+    "CellInside": 0       },       {          "LeftBound": false,          "UpperBound":
+    false,          "RightBound": false,          "BottomBound": false,         
+    "Plurality": {             "Id": 54          },          "CellInside": 0      
+    },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": false,          "BottomBound": true,          "Plurality": {            
+    "Id": 51          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": false,          "RightBound": false,          "BottomBound":
+    true,          "Plurality": {             "Id": 52          },          "CellInside":
+    0       },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": true,          "BottomBound": true,          "Plurality": {            
+    "Id": 52          },          "CellInside": 0       }    ],    [       {         
+    "LeftBound": true,          "UpperBound": false,          "RightBound": true,         
+    "BottomBound": false,          "Plurality": {             "Id": 55          },         
+    "CellInside": 0       },       {          "LeftBound": false,          "UpperBound":
+    false,          "RightBound": false,          "BottomBound": false,         
+    "Plurality": {             "Id": 55          },          "CellInside": 0      
+    },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": true,          "BottomBound": false,          "Plurality": {            
+    "Id": 55          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": false,          "RightBound": true,          "BottomBound":
+    false,          "Plurality": {             "Id": 54          },          "CellInside":
+    0       },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": false,          "BottomBound": false,          "Plurality": {            
+    "Id": 54          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": false,          "RightBound": false,          "BottomBound":
+    false,          "Plurality": {             "Id": 54          },          "CellInside":
+    0       },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": true,          "BottomBound": false,          "Plurality": {            
+    "Id": 52          },          "CellInside": 0       }    ],    [       {         
+    "LeftBound": true,          "UpperBound": false,          "RightBound": true,         
+    "BottomBound": false,          "Plurality": {             "Id": 56          },         
+    "CellInside": 0       },       {          "LeftBound": false,          "UpperBound":
+    false,          "RightBound": false,          "BottomBound": true,          "Plurality":
+    {             "Id": 56          },          "CellInside": 3       },       {         
+    "LeftBound": false,          "UpperBound": false,          "RightBound": false,         
+    "BottomBound": true,          "Plurality": {             "Id": 56          },         
+    "CellInside": 0       },       {          "LeftBound": false,          "UpperBound":
+    false,          "RightBound": true,          "BottomBound": false,          "Plurality":
+    {             "Id": 56          },          "CellInside": 0       },       {         
+    "LeftBound": false,          "UpperBound": false,          "RightBound": false,         
+    "BottomBound": false,          "Plurality": {             "Id": 56          },         
+    "CellInside": 0       },       {          "LeftBound": false,          "UpperBound":
+    false,          "RightBound": false,          "BottomBound": false,         
+    "Plurality": {             "Id": 59          },          "CellInside": 3      
+    },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": false,          "BottomBound": true,          "Plurality": {            
+    "Id": 52          },          "CellInside": 0       }    ],    [       {         
+    "LeftBound": true,          "UpperBound": false,          "RightBound": false,         
+    "BottomBound": true,          "Plurality": {             "Id": 56          },         
+    "CellInside": 0       },       {          "LeftBound": false,          "UpperBound":
+    false,          "RightBound": false,          "BottomBound": false,         
+    "Plurality": {             "Id": 56          },          "CellInside": 0      
+    },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": false,          "BottomBound": false,          "Plurality": {            
+    "Id": 60          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": false,          "RightBound": false,          "BottomBound":
+    false,          "Plurality": {             "Id": 60          },          "CellInside":
+    0       },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": false,          "BottomBound": true,          "Plurality": {            
+    "Id": 60          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": false,          "RightBound": false,          "BottomBound":
+    true,          "Plurality": {             "Id": 59          },          "CellInside":
+    0       },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": true,          "BottomBound": false,          "Plurality": {            
+    "Id": 52          },          "CellInside": 0       }    ],    [       {         
+    "LeftBound": false,          "UpperBound": false,          "RightBound": false,         
+    "BottomBound": false,          "Plurality": {             "Id": 62          },         
+    "CellInside": 0       },       {          "LeftBound": false,          "UpperBound":
+    false,          "RightBound": true,          "BottomBound": false,          "Plurality":
+    {             "Id": 63          },          "CellInside": 0       },       {         
+    "LeftBound": false,          "UpperBound": false,          "RightBound": false,         
+    "BottomBound": false,          "Plurality": {             "Id": 60          },         
+    "CellInside": 0       },       {          "LeftBound": false,          "UpperBound":
+    false,          "RightBound": true,          "BottomBound": false,          "Plurality":
+    {             "Id": 64          },          "CellInside": 0       },       {         
+    "LeftBound": false,          "UpperBound": false,          "RightBound": false,         
+    "BottomBound": false,          "Plurality": {             "Id": 60          },         
+    "CellInside": 0       },       {          "LeftBound": false,          "UpperBound":
+    false,          "RightBound": false,          "BottomBound": true,          "Plurality":
+    {             "Id": 65          },          "CellInside": 0       },       {         
+    "LeftBound": false,          "UpperBound": false,          "RightBound": true,         
+    "BottomBound": false,          "Plurality": {             "Id": 52          },         
+    "CellInside": 0       }    ],    [       {          "LeftBound": false,         
+    "UpperBound": false,          "RightBound": false,          "BottomBound": true,         
+    "Plurality": {             "Id": 62          },          "CellInside": 0      
+    },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": false,          "BottomBound": true,          "Plurality": {            
+    "Id": 63          },          "CellInside": 3       },       {          "LeftBound":
+    false,          "UpperBound": false,          "RightBound": false,          "BottomBound":
+    true,          "Plurality": {             "Id": 60          },          "CellInside":
+    0       },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": false,          "BottomBound": true,          "Plurality": {            
+    "Id": 64          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": false,          "RightBound": false,          "BottomBound":
+    true,          "Plurality": {             "Id": 60          },          "CellInside":
+    0       },       {          "LeftBound": false,          "UpperBound": false,         
+    "RightBound": false,          "BottomBound": true,          "Plurality": {            
+    "Id": 65          },          "CellInside": 0       },       {          "LeftBound":
+    false,          "UpperBound": false,          "RightBound": true,          "BottomBound":
+    true,          "Plurality": {             "Id": 52          },          "CellInside":
+    0       }    ] ]'
