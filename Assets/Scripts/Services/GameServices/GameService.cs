@@ -62,6 +62,8 @@ public class GameService : MonoBehaviour, IService
         int level = data.currentLevel;
         int maxLevel = data.maxLevel;
 
+        bool completed = level == Constants.LevelCount;
+        
         if (level < Constants.LevelCount)
         {
             level += 1;
@@ -74,10 +76,12 @@ public class GameService : MonoBehaviour, IService
         }
         _storage.Save();
 
-        var gameWindow = ServiceLocator.Instance.GetService<GameWindow>();
-        if (gameWindow != null)
+        var finishWindow = ServiceLocator.Instance.GetService<FinishWindow>();
+        if (finishWindow == null)
         {
-            gameWindow.OnFinish();
+            return;
         }
+        finishWindow.SetCrowImageActivity(completed);
+        finishWindow.Popup();
     }
 }

@@ -30,12 +30,6 @@ public class GameWindow : CustomWindow
 
     public void OnFinish()
     {
-        var finishWindow = ServiceLocator.Instance.GetService<FinishWindow>();
-        if(finishWindow == null)
-        {
-            return;
-        }
-
-        finishWindow.Popup();
+        
     }
 }
