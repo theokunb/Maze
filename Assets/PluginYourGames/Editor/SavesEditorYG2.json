@@ -13,10 +13,10 @@
         false,
         false
     ],
-    "idSave": 1056,
+    "idSave": 1162,
     "maxLevel": 20,
-    "currentLevel": 20,
-    "colorSet": 2,
+    "currentLevel": 1,
+    "colorSet": 3,
     "zoom": 2.0999999046325685,
     "currentVolume": 0.0
 }
