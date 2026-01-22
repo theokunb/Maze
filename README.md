@@ -1,6 +1,6 @@
 # Игра куб лабиринт сделано на Unity 3d Build-in
 
-> ссылка на игру [itch io](https://theokunb.itch.io/cube-labyrinth)
+> ссылка на игру [Yandex Games](https://yandex.ru/games/app/427911?lang=ru)
 
 ## Правила игры
 - Вращайте куб с помощью мыши, что бы катить шар
